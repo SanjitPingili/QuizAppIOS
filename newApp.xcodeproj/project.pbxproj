@@ -16,6 +16,7 @@
 		EF55FC9828E3891600AC9375 /* newAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC9728E3891600AC9375 /* newAppUITestsLaunchTests.swift */; };
 		EF55FCA528E600BE00AC9375 /* newPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FCA428E600BE00AC9375 /* newPage1.swift */; };
 		EF55FCA728E60C8D00AC9375 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF55FCA628E60C8D00AC9375 /* Storyboard.storyboard */; };
+		EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FCA828E60EE600AC9375 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EF55FC9728E3891600AC9375 /* newAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF55FCA428E600BE00AC9375 /* newPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newPage1.swift; sourceTree = "<group>"; };
 		EF55FCA628E60C8D00AC9375 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		EF55FCA828E60EE600AC9375 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				EF55FC7928E3891300AC9375 /* newAppApp.swift */,
 				EF55FC7B28E3891300AC9375 /* ContentView.swift */,
+				EF55FCA828E60EE600AC9375 /* ViewController.swift */,
 				EF55FCA428E600BE00AC9375 /* newPage1.swift */,
 				EF55FCA628E60C8D00AC9375 /* Storyboard.storyboard */,
 				EF55FC7D28E3891500AC9375 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 			files = (
 				EF55FC7C28E3891300AC9375 /* ContentView.swift in Sources */,
 				EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */,
+				EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */,
 				EF55FCA528E600BE00AC9375 /* newPage1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
