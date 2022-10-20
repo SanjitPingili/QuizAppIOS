@@ -91,7 +91,7 @@ struct Home: View {
             VStack{
             
             VStack {
-                Text("Menu")
+                Text("Options")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -159,7 +159,7 @@ struct Home: View {
                         EmptyView()
                     }
                     .padding(.vertical)
-                    
+
                     Button("Progress") {
                         //Check if user exists
                         goProgress = true
@@ -168,7 +168,7 @@ struct Home: View {
                     .frame(width: 300, height: 50)
                     .background(Color.orange)
                     .cornerRadius(10)
-                    
+
                     NavigationLink(destination: Flashcards(), isActive: $goProgress) {
                         EmptyView()
                     }
@@ -189,6 +189,8 @@ struct Home: View {
             }
         }
     }
+
+
     
     struct Quizzes: View {
         var body: some View {
@@ -200,7 +202,7 @@ struct Home: View {
             }
         }
     }
-    
+
     struct Profile: View {
         var body: some View {
             NavigationView {
@@ -211,7 +213,7 @@ struct Home: View {
             }
         }
     }
-    
+
     struct SavedQuestions: View {
         var body: some View {
             NavigationView {
@@ -222,7 +224,7 @@ struct Home: View {
             }
         }
     }
-    
+
     struct Progress: View {
         var body: some View {
             NavigationView {
@@ -233,10 +235,69 @@ struct Home: View {
             }
         }
     }
-    
+
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             LogIn()
         }
     }
+
+
+//flipping the flashcard code
+//implement to new page
+
+struct NewCards<Front, Back> : View where Front: View, Back: View {
+    var front: () -> Front
+    var back: () -> Back
+
+    @State var flipped: Bool = false
+    @State var flashcardRotation = 0.0
+    @State var contentRotation = 0.0
+
+    init (@ViewBuilder front: @escaping () -> Front, @ViewBuilder back: @escaping () -> Back) {
+        self.front = front
+        self.back = back
+    }
+
+    var body: some View {
+        ZStack {
+            if flipped {
+                back()
+
+            } else {
+                front()
+            }
+        }
+        .rotation3DEffect(.degrees(contentRotation), axis: (x: 0, y: 1, z: 0))
+        .padding()
+        .frame(height: 200)
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .overlay(
+            Rectangle()
+                .stroke(Color.black, lineWidth: 2)
+
+        )
+        .padding()
+        .onTapGesture {
+            flipFlashcard()
+        }
+        .rotation3DEffect(.degrees(flashcardRotation), axis: (x: 0, y: 1, z: 0))
+    }
+    
+    func flipFlashcard() {
+        let animationTime = 0.5
+        withAnimation(Animation.linear(duration: 0.5)) {
+            flashcardRotation += 180
+            flipped.toggle()
+
+        }
+        withAnimation(Animation.linear(duration: 0.001).delay(animationTime/2)) {
+            contentRotation += 180
+            flipped.toggle()
+        }
+    }
+
+
+}
 
