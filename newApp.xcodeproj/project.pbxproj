@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7928E3891300AC9375 /* newAppApp.swift */; };
-		EF55FC7C28E3891300AC9375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7B28E3891300AC9375 /* ContentView.swift */; };
+		EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7B28E3891300AC9375 /* LogIn.swift */; };
 		EF55FC7E28E3891500AC9375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF55FC7D28E3891500AC9375 /* Assets.xcassets */; };
 		EF55FC8228E3891500AC9375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF55FC8128E3891500AC9375 /* Preview Assets.xcassets */; };
 		EF55FC8C28E3891500AC9375 /* newAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC8B28E3891500AC9375 /* newAppTests.swift */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		EF55FC7628E3891300AC9375 /* newApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF55FC7928E3891300AC9375 /* newAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newAppApp.swift; sourceTree = "<group>"; };
-		EF55FC7B28E3891300AC9375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF55FC7B28E3891300AC9375 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		EF55FC7D28E3891500AC9375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF55FC7F28E3891500AC9375 /* newApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newApp.entitlements; sourceTree = "<group>"; };
 		EF55FC8128E3891500AC9375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				EF55FC7928E3891300AC9375 /* newAppApp.swift */,
-				EF55FC7B28E3891300AC9375 /* ContentView.swift */,
+				EF55FC7B28E3891300AC9375 /* LogIn.swift */,
 				EF55FCA828E60EE600AC9375 /* ViewController.swift */,
 				EF55FCA428E600BE00AC9375 /* newPage1.swift */,
 				EF55FCA628E60C8D00AC9375 /* Storyboard.storyboard */,
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF55FC7C28E3891300AC9375 /* ContentView.swift in Sources */,
+				EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */,
 				EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */,
 				EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */,
 				EF55FCA528E600BE00AC9375 /* newPage1.swift in Sources */,
