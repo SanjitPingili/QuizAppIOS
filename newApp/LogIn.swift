@@ -193,11 +193,77 @@ struct Home: View {
 
     
     struct Quizzes: View {
+        @State private var isTrue = false
         var body: some View {
             NavigationView {
-                ZStack {
-                    Rectangle()
-                        .scale(0.3)
+                VStack{
+                
+                VStack {
+                    Text("Question")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .bold()
+                        .padding(.bottom, 50.0)
+                }
+                    VStack {
+                        
+                        Button("Answer Choice 1") {
+                            //Check if user exists
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        
+                        Button("Answer Choice 2") {
+                            //Check if user exists
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        
+                        
+                        Button("Answer Choice 3") {
+                            //Check if user exists
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        
+                        Button("Answer Choice 4") {
+                            //Check if user exists
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                    }
+                    HStack {
+                        Button("Save") {
+                            //add to a list of saved questions that need to be reviewd
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 100, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        Button("Next") {
+                            //goes to next question
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 100, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                    }
                 }
             }
         }
