@@ -111,7 +111,7 @@ struct Home: View {
                     .cornerRadius(10)
                     
                     
-                    NavigationLink(destination: Flashcards(), isActive: $goProfile) {
+                    NavigationLink(destination: Profile(), isActive: $goProfile) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -126,7 +126,7 @@ struct Home: View {
                     .cornerRadius(10)
                     
                     
-                    NavigationLink(destination: Flashcards(), isActive: $goFlashcards) {
+                    NavigationLink(destination: CardFront(), isActive: $goFlashcards) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -155,7 +155,7 @@ struct Home: View {
                     .background(Color.orange)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Flashcards(), isActive: $goSaved) {
+                    NavigationLink(destination: SavedQuestions(), isActive: $goSaved) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -169,7 +169,7 @@ struct Home: View {
                     .background(Color.orange)
                     .cornerRadius(10)
 
-                    NavigationLink(destination: Flashcards(), isActive: $goProgress) {
+                    NavigationLink(destination: Progress(), isActive: $goProgress) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -306,8 +306,8 @@ struct Home: View {
 //new flash cards implementation
 
 struct CardFront: View {
-    var degree : Double
-    let textContext : String
+//    var degree : Double
+//    let textContext : String
     
     var body: some View {
         ZStack {
@@ -319,9 +319,9 @@ struct CardFront: View {
                 Text("Question:")
                     Text("New question 1")
                 
-                Text (textContext)
-                    .lineLimit(10)
-                    Text("answer here")
+//                Text (textContext)
+//                    .lineLimit(10)
+//                    Text("answer here")
         
         }
             
@@ -330,8 +330,8 @@ struct CardFront: View {
     }
 }
 
-struct CardFront_Previews : PreviewProvider {
-    static var previews: some View {
-        CardFront(degree: 0.0, textContext: "Question string goes here")
-    }
-}
+//struct CardFront_Previews : PreviewProvider {
+//    static var previews: some View {
+//        CardFront(degree: 0.0, textContext: "Question string goes here")
+//    }
+//}
