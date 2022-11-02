@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF10047F2913088400289C69 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10047E2913088400289C69 /* QuizView.swift */; };
 		EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7928E3891300AC9375 /* newAppApp.swift */; };
 		EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7B28E3891300AC9375 /* LogIn.swift */; };
 		EF55FC7E28E3891500AC9375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF55FC7D28E3891500AC9375 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF10047E2913088400289C69 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		EF55FC7628E3891300AC9375 /* newApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF55FC7928E3891300AC9375 /* newAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newAppApp.swift; sourceTree = "<group>"; };
 		EF55FC7B28E3891300AC9375 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				EF55FC7928E3891300AC9375 /* newAppApp.swift */,
 				EF55FC7B28E3891300AC9375 /* LogIn.swift */,
+				EF10047E2913088400289C69 /* QuizView.swift */,
 				EF55FCA828E60EE600AC9375 /* ViewController.swift */,
 				EF55FCA428E600BE00AC9375 /* newPage1.swift */,
 				EF55FCA628E60C8D00AC9375 /* Storyboard.storyboard */,
@@ -271,6 +274,7 @@
 			files = (
 				EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */,
 				EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */,
+				EF10047F2913088400289C69 /* QuizView.swift in Sources */,
 				EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */,
 				EF55FCA528E600BE00AC9375 /* newPage1.swift in Sources */,
 			);

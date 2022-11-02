@@ -126,7 +126,7 @@ struct Home: View {
                     .cornerRadius(10)
                     
                     
-                    NavigationLink(destination: CardFront(), isActive: $goFlashcards) {
+                    NavigationLink(destination: QuizView(), isActive: $goFlashcards) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -372,8 +372,8 @@ struct Home: View {
 //new flash cards implementation
 
 struct CardFront: View {
-//    var degree : Double
-//    let textContext : String
+    @Binding var degree : Double
+    let textContext : String
     
     var body: some View {
         ZStack {
@@ -383,21 +383,41 @@ struct CardFront: View {
             
             VStack {
                 Text("Question:")
-                    Text("New question 1")
+                Text("New question 1")
                 
-//                Text (textContext)
-//                    .lineLimit(10)
-//                    Text("answer here")
-        
-        }
-            
-            
-        }
+                Text (textContext)
+                    .lineLimit(10)
+                Text("answer here")
+                
+            }
+        } .rotation3DEffect(Angle(degrees: degree), axis: (x: 0.0, y: 1.0, z: 0.0))
     }
 }
 
-//struct CardFront_Previews : PreviewProvider {
-//    static var previews: some View {
-//        CardFront(degree: 0.0, textContext: "Question string goes here")
-//    }
-//}
+
+
+
+
+struct CardBack: View {
+    @Binding var degree : Double
+    let textContext : String
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20).stroke(.green.opacity(0.5), lineWidth: 10).padding()
+            
+            RoundedRectangle(cornerRadius: 20).stroke(.green.opacity(0.5), lineWidth: 10).padding()
+            
+            VStack {
+                Text("Question:")
+                Text("New question 1")
+                
+                Text (textContext)
+                    .lineLimit(10)
+                Text("answer here")
+                
+            }
+        } .rotation3DEffect(Angle(degrees: degree), axis: (x: 0.0, y: 1.0, z: 0.0))
+    }
+}
+
