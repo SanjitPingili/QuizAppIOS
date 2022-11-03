@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+//quiz view to flip the flash card and create parameters to navigate between pages
 struct QuizView: View {
    // typealias Body = <#type#>
     @State var backDeg = 90.0
