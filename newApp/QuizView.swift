@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+//quiz view to flip the flash card and create parameters to navigate between pages
 struct QuizView: View {
    // typealias Body = <#type#>
     @State var backDeg = 90.0
@@ -23,7 +23,7 @@ struct QuizView: View {
 
             ZStack {
                 CardFront(degree: $frontDeg, textContext: "question here")
-                CardBack(degree: $backDeg, textContext: "answer string")
+                CardBack(degree: $backDeg, textContext: "Answer:")
             }.onTapGesture {
                 flipCard()
             }
