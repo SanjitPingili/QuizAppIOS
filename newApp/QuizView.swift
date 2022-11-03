@@ -23,7 +23,7 @@ struct QuizView: View {
 
             ZStack {
                 CardFront(degree: $frontDeg, textContext: "question here")
-                CardBack(degree: $backDeg, textContext: "answer string")
+                CardBack(degree: $backDeg, textContext: "Answer:")
             }.onTapGesture {
                 flipCard()
             }
