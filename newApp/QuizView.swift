@@ -6,24 +6,48 @@
 
 
 import SwiftUI
+//import RealmSwift
+//let realmApp = RealmSwift.App(id: "application-0-usith")
 
-//quiz view to flip the flash card and create parameters to navigate between pages
+let data = DataLoader().userData
 struct QuizView: View {
+   
    // typealias Body = <#type#>
     @State var backDeg = 90.0
     @State var frontDeg = 0.0
     @State var isFlipped = false
 
+
     let durationAndDelay: CGFloat = 0.2
 
     @State var questionNum = 0
 
-
     var body: some View {
+        /*
+        let realm = try! Realm()
+        var token: NotificationToken?
+        // Read from realm
+        try! realm.write {
+            realm.write()
+        }
 
+        //  Set up the listener & observe object notifications.
+        token = realm.observe { change in
+            switch change {
+            case .change(let properties):
+                for property in properties {
+                    print("Property '(property.name)' changed to '(property.newValue!)'");
+                }
+            case .error(let error):
+                print("An error occurred: (error)")
+            case .deleted:
+                print("The object was deleted.")
+            }
+        }
+         */
             ZStack {
-                CardFront(degree: $frontDeg, textContext: "question here")
-                CardBack(degree: $backDeg, textContext: "Answer:")
+                CardFront(degree: $frontDeg, textContext: data[0].Question)
+                CardBack(degree: $backDeg, textContext:  data[0].Answer)
             }.onTapGesture {
                 flipCard()
             }
@@ -32,7 +56,7 @@ struct QuizView: View {
 
 
     }
-
+    
     func flipCard() {
 
         isFlipped.toggle()
@@ -70,7 +94,6 @@ struct QuizView: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-
         QuizView()
     }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701E8E9529187AE800C7B744 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 701E8E9429187AE800C7B744 /* Realm */; };
+		701E8E9729187AE800C7B744 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 701E8E9629187AE800C7B744 /* RealmSwift */; };
+		701E8EA129188D6800C7B744 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E8EA029188D6800C7B744 /* UserData.swift */; };
+		701E8EA329188D9B00C7B744 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E8EA229188D9B00C7B744 /* DataLoader.swift */; };
+		701E8EA72918964C00C7B744 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 701E8EA62918964C00C7B744 /* Data.json */; };
 		EF10047F2913088400289C69 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10047E2913088400289C69 /* QuizView.swift */; };
 		EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7928E3891300AC9375 /* newAppApp.swift */; };
 		EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55FC7B28E3891300AC9375 /* LogIn.swift */; };
@@ -38,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		701E8EA029188D6800C7B744 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		701E8EA229188D9B00C7B744 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		701E8EA62918964C00C7B744 /* Data.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = Data.json; sourceTree = "<group>"; };
 		EF10047E2913088400289C69 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		EF55FC7628E3891300AC9375 /* newApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF55FC7928E3891300AC9375 /* newAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newAppApp.swift; sourceTree = "<group>"; };
@@ -60,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701E8E9729187AE800C7B744 /* RealmSwift in Frameworks */,
+				701E8E9529187AE800C7B744 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +113,7 @@
 		EF55FC7828E3891300AC9375 /* newApp */ = {
 			isa = PBXGroup;
 			children = (
+				701E8EA62918964C00C7B744 /* Data.json */,
 				EF55FC7928E3891300AC9375 /* newAppApp.swift */,
 				EF55FC7B28E3891300AC9375 /* LogIn.swift */,
 				EF10047E2913088400289C69 /* QuizView.swift */,
@@ -112,6 +123,8 @@
 				EF55FC7D28E3891500AC9375 /* Assets.xcassets */,
 				EF55FC7F28E3891500AC9375 /* newApp.entitlements */,
 				EF55FC8028E3891500AC9375 /* Preview Content */,
+				701E8EA029188D6800C7B744 /* UserData.swift */,
+				701E8EA229188D9B00C7B744 /* DataLoader.swift */,
 			);
 			path = newApp;
 			sourceTree = "<group>";
@@ -157,6 +170,10 @@
 			dependencies = (
 			);
 			name = newApp;
+			packageProductDependencies = (
+				701E8E9429187AE800C7B744 /* Realm */,
+				701E8E9629187AE800C7B744 /* RealmSwift */,
+			);
 			productName = newApp;
 			productReference = EF55FC7628E3891300AC9375 /* newApp.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +246,9 @@
 				Base,
 			);
 			mainGroup = EF55FC6D28E3891300AC9375;
+			packageReferences = (
+				701E8E9329187AE800C7B744 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = EF55FC7728E3891300AC9375 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -248,6 +268,7 @@
 				EF55FC8228E3891500AC9375 /* Preview Assets.xcassets in Resources */,
 				EF55FC7E28E3891500AC9375 /* Assets.xcassets in Resources */,
 				EF55FCA728E60C8D00AC9375 /* Storyboard.storyboard in Resources */,
+				701E8EA72918964C00C7B744 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701E8EA129188D6800C7B744 /* UserData.swift in Sources */,
 				EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */,
+				701E8EA329188D9B00C7B744 /* DataLoader.swift in Sources */,
 				EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */,
 				EF10047F2913088400289C69 /* QuizView.swift in Sources */,
 				EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */,
@@ -628,6 +651,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		701E8E9329187AE800C7B744 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		701E8E9429187AE800C7B744 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 701E8E9329187AE800C7B744 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		701E8E9629187AE800C7B744 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 701E8E9329187AE800C7B744 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF55FC6E28E3891300AC9375 /* Project object */;
 }
