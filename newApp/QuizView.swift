@@ -46,8 +46,9 @@ struct QuizView: View {
         }
          */
             ZStack {
-                CardFront(degree: $frontDeg, textContext: data[0].Question)
-                CardBack(degree: $backDeg, textContext:  data[0].Answer)
+                var num = Int.random(in: 1..<5500)
+                CardFront(degree: $frontDeg, textContext: data[num].Question)
+                CardBack(degree: $backDeg, textContext:  data[num].Answer)
             }.onTapGesture {
                 flipCard()
             }
