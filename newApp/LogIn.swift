@@ -84,14 +84,14 @@ struct Home: View {
     @State private var goFlashcards = false
     @State private var goQuizzes = false
     @State private var goProgress = false
-    @State private var goProfile = false
+    @State private var goSettings = false
     @State private var goSaved = false
     var body: some View {
         NavigationView {
             VStack{
             
             VStack {
-                Text("Options")
+                Text("Menu")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -101,9 +101,9 @@ struct Home: View {
             }
                 VStack {
                     
-                    Button("Profile") {
+                    Button("Settings") {
                         //Check if user exists
-                        goProfile = true
+                        goSettings = true
                     }
                     .foregroundColor(.black)
                     .frame(width: 300, height: 50)
@@ -111,7 +111,7 @@ struct Home: View {
                     .cornerRadius(10)
                     
                     
-                    NavigationLink(destination: Profile(), isActive: $goProfile) {
+                    NavigationLink(destination: Settings(), isActive: $goSettings) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -269,12 +269,19 @@ struct Home: View {
         }
     }
 
-    struct Profile: View {
+    struct Settings: View {
         var body: some View {
             NavigationView {
-                ZStack {
-                    Rectangle()
-                        .scale(0.3)
+                VStack {
+                    List {
+                        Text("View Profile")
+                        Text("Change  Username")
+                        Text("Change Password")
+                        Text("Dark Mode")
+                        Text("App Version")
+                        Text("Privacy")
+                        Text("About")
+                    }
                 }
             }
         }
