@@ -10,6 +10,7 @@ import SwiftUI
 //let realmApp = RealmSwift.App(id: "application-0-usith")
 
 let data = DataLoader().userData
+
 struct QuizView: View {
    
    // typealias Body = <#type#>
@@ -46,15 +47,12 @@ struct QuizView: View {
         }
          */
             ZStack {
-                var num = Int.random(in: 1..<5500)
+                var num = Int.random(in: 1..<5140)
                 CardFront(degree: $frontDeg, textContext: data[num].Question)
                 CardBack(degree: $backDeg, textContext:  data[num].Answer)
             }.onTapGesture {
                 flipCard()
             }
-
-
-
 
     }
     
