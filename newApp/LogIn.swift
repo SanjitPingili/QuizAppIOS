@@ -361,7 +361,7 @@ struct CardBack: View {
                 
                 Text (textContext)
                     .lineLimit(10)
-                Text("answer here")
+                //Text("answer here")
                 
             }
         } .rotation3DEffect(Angle(degrees: degree), axis: (x: 0.0, y: 1.0, z: 0.0))
