@@ -48,11 +48,15 @@ struct QuizView: View {
          */
             ZStack {
                 var num = Int.random(in: 1..<5140)
+                Button("Next") {
+                }.offset(x: 130, y:380)
+                //.onTapGesture(perform: <#T##() -> Void#>)
                 CardFront(degree: $frontDeg, textContext: data[num].Question)
                 CardBack(degree: $backDeg, textContext:  data[num].Answer)
             }.onTapGesture {
                 flipCard()
             }
+        
 
     }
     
