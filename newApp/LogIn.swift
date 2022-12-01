@@ -88,7 +88,7 @@ struct Home: View {
     @State private var goSettings = false
     @State private var goSaved = false
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack{
             
             VStack {
@@ -176,18 +176,18 @@ struct Home: View {
                     .padding(.vertical)
                 }
             }
-        }
+        //}
     }
 }
     
     struct Flashcards: View {
         var body: some View {
-            NavigationView {
+            //NavigationView {
                 ZStack {
                     Rectangle()
                         .scale(0.3)
                 }
-            }
+            //}
         }
     }
 
@@ -212,7 +212,7 @@ struct Home: View {
         }
 
         var body: some View {
-            NavigationView {
+            //NavigationView {
                 VStack{
                 
                 VStack {
@@ -282,13 +282,13 @@ struct Home: View {
                         .padding(.vertical)
                     }
                 }
-            }
+           // }
         }
     }
 
     struct Settings: View {
         var body: some View {
-            NavigationView {
+           // NavigationView {
                 VStack {
                     List {
                         Text("View Profile")
@@ -300,29 +300,29 @@ struct Home: View {
                         Text("About")
                     }
                 }
-            }
+           // }
         }
     }
 
     struct SavedQuestions: View {
         var body: some View {
-            NavigationView {
+            // NavigationView {
                 ZStack {
                     Rectangle()
                         .scale(0.3)
                 }
-            }
+            //}
         }
     }
 
     struct Progress: View {
         var body: some View {
-            NavigationView {
+            //NavigationView {
                 ZStack {
                     Rectangle()
                         .scale(0.3)
                 }
-            }
+            //}
         }
     }
 
