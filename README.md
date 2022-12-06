@@ -10,11 +10,25 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 - `mongodb+srv://quizAppMobileUser:xkLaBBaa1dTsZuX8@quizappdb.7ltdg.mongodb.net/test`
 
 ## Fall 2022 Team Memebrs
-- Neha Lalani
-- Aahan Kerawala
-- Sakshi Deshpande
-- Zhen Hong Tan
-- Sabina Ajjan
-- Devang Ajmera
+- Neha Lalani - Frontend Team
+- Aahan Kerawala - Frontend Team
+- Sakshi Deshpande - Frontend Team
+- Zhen Hong Tan - Backend Team
+- Sabina Ajjan - Backend Team
+- Devang Ajmera - Backend Team
 
 ## [Figma Link to Wireframing](https://www.figma.com/file/QxqNtFrd8C7XOSHJsooLfQ/SWIFT-App-Protype?node-id=0%3A1&t=qOEb56QCIo9ARpFr-0)
+
+## NewAppApp 
+- Loads the Log In page
+
+## LogIn 
+- Log in presents a log in page to the user which allows them to enter a valid username and password to access the app. It then presents a menu to the user where they are able to choose from multiple options such as settings, flashcards, quizzes, saved questions, and progress. This file also contains a large portion of the flashcard code which is part of the multiple options presented to the user. 
+
+## QuizView 
+- Loads the quiz content and the functionality of the flashcard such as flipping the flashcard. 
+
+
+
+
+
