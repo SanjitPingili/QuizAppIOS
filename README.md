@@ -19,13 +19,13 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 
 ## [Figma Link to Wireframing](https://www.figma.com/file/QxqNtFrd8C7XOSHJsooLfQ/SWIFT-App-Protype?node-id=0%3A1&t=qOEb56QCIo9ARpFr-0)
 
-## NewAppApp 
+## NewAppApp.swift
 - Loads the Log In page
 
-## LogIn 
+## LogIn.swift
 - Log in presents a log in page to the user which allows them to enter a valid username and password to access the app. It then presents a menu to the user where they are able to choose from multiple options such as settings, flashcards, quizzes, saved questions, and progress. This file also contains a large portion of the flashcard code which is part of the multiple options presented to the user. 
 
-## QuizView 
+## QuizView.swift
 - Loads the quiz content and the functionality of the flashcard such as flipping the flashcard. 
 
 
