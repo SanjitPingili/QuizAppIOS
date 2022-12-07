@@ -144,8 +144,14 @@ struct Register: View {
                         .cornerRadius(10)
                         .border(.red, width: CGFloat(invalidPassword2))
                     Button("Create Account") {
+                      
                         //Check if user exists
                         checkNewUser(username: username, password: password, reenteredPassword: reenteredPassword)
+                    }
+                    .alert("Passwords Don't Match", isPresented: $showAlert) {
+                        Button("OK", role: .cancel) { }
+                    } message: {
+                        Text("Passwords must match")
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
@@ -162,7 +168,8 @@ struct Register: View {
         }
     }
     
-    func checkNewUser(username: String, password: String, reenteredPassword : String) {
+    func checkNewUser(username: String, password: String,
+                      reenteredPassword : String) {
         //add check for usernames
         if username.count >= 5 {
             invalidUsername = 0
@@ -173,13 +180,14 @@ struct Register: View {
                     showingRegisterScreen = true
                 } else {
                     showAlert = true
+                      
                     // Create new Alert
-                    var dialogMessage = UIAlertController(title: "Passwords Don't Match", message: "Make sure passwords match", preferredStyle: .alert)
+                    /**var dialogMessage = UIAlertController(title: "Passwords Don't Match", message: "Make sure passwords match", preferredStyle: .alert)
                   
                     let ok = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
                          print("Cancel button tapped")
                         })
-                    dialogMessage.addAction(ok)
+                    dialogMessage.addAction(ok)*/
                   
                 
                     invalidPassword2 = 2
