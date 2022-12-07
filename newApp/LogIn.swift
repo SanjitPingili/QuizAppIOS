@@ -14,6 +14,8 @@ struct LogIn: View {
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
+    @State private var goRegister = false
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -54,8 +56,22 @@ struct LogIn: View {
                     .frame(width: 300, height: 50)
                     .background(Color.orange)
                     .cornerRadius(10)
+                    .padding(.bottom, 3.0)
                     
                     NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
+                        EmptyView()
+                    }
+                    Button("Register") {
+                        goRegister = true
+                        //Check if user exists
+                      
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    
+                    NavigationLink(destination: Register(), isActive: $goRegister) {
                         EmptyView()
                     }
                 }
@@ -75,6 +91,104 @@ struct LogIn: View {
             }
         } else {
             wrongUsername = 2
+        }
+    }
+        
+
+}
+struct Register: View {
+    @State private var username = ""
+    @State private var password = ""
+    @State private var reenteredPassword = ""
+    @State private var invalidUsername = 0
+    @State private var invalidPassword = 0
+    @State private var invalidPassword2 = 0
+    @State private var showingRegisterScreen = false
+    @State private var showAlert = false
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color.orange
+                    .ignoresSafeArea()
+                Circle()
+                    .scale(1.7)
+                    .foregroundColor(.white.opacity(0.4))
+                Circle()
+                    .scale(1.35)
+                    .foregroundColor(.white.opacity(0.4))
+                Circle()
+                    .scale(1)
+                    .foregroundColor(.white)
+                VStack {
+                    Text("Register for TutorBot")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom, 2.0)
+                    
+                    TextField("Username", text: $username)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(invalidUsername))
+                    TextField("Password", text: $password)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(invalidPassword))
+                    TextField("Re-enter Password", text: $reenteredPassword)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(invalidPassword2))
+                    Button("Create Account") {
+                        //Check if user exists
+                        checkNewUser(username: username, password: password, reenteredPassword: reenteredPassword)
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    
+                    NavigationLink(destination: Home(), isActive: $showingRegisterScreen) {
+                        EmptyView()
+                    }
+            
+                }
+            }
+            .navigationBarHidden(true)
+        }
+    }
+    
+    func checkNewUser(username: String, password: String, reenteredPassword : String) {
+        //add check for usernames
+        if username.count >= 5 {
+            invalidUsername = 0
+            if password.count >= 8 {
+                invalidPassword = 0
+                if reenteredPassword == password {
+                    invalidPassword2 = 0;
+                    showingRegisterScreen = true
+                } else {
+                    showAlert = true
+                    // Create new Alert
+                    var dialogMessage = UIAlertController(title: "Passwords Don't Match", message: "Make sure passwords match", preferredStyle: .alert)
+                  
+                    let ok = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+                         print("Cancel button tapped")
+                        })
+                    dialogMessage.addAction(ok)
+                  
+                
+                    invalidPassword2 = 2
+                }
+            } else {
+                invalidPassword = 2
+            }
+        } else {
+            invalidUsername = 2
         }
     }
         
