@@ -29,6 +29,9 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 - Loads the quiz content and the functionality of the flashcard such as flipping the flashcard. 
 
 
+## Branch Organization
+- The new main branch sould contain the most recent running code
+
 
 
 
