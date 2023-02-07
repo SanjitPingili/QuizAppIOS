@@ -1,4 +1,4 @@
-# ITS-Swift-Team-Fall-2022
+# ITS-Swift-Team-Spring-2023
 This repository tracks the development for a iOS quiz app. 
 So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 and build it on any IOS device. 
 
