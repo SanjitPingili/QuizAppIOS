@@ -409,22 +409,53 @@ struct Home: View {
     }
 
     struct Settings: View {
+        @State private var goChangeUsername = false
+        @State private var goChangePassword = false
+        @State private var goDarkMode = false
+        @State private var goAppVersion = false
+        @State private var goPrivacy = false
+        @State private var goAbout = false
         var body: some View {
            // NavigationView {
                 VStack {
                     List {
-                        Text("View Profile")
-                        Text("Change  Username")
-                        Text("Change Password")
-                        Text("Dark Mode")
-                        Text("App Version")
-                        Text("Privacy")
-                        Text("About")
+                        Button("Change Username") {
+                            //Check if user exists
+                            goChangeUsername = true
+                        }
+                        
+                        
+                        Button("Change Password") {
+                            //Check if user exists
+                            goChangePassword = true
+                        }
+
+                        Button("DarkMode") {
+                            //Check if user exists
+                            goDarkMode = true
+                        }
+
+                        
+                        Button("App Version") {
+                            //Check if user exists
+                            goAppVersion = true
+                        }
+
+                        Button("Privacy") {
+                            //Check if user exists
+                            goAbout = true
+                        }
+                        
+                        Button("About") {
+                            //Check if user exists
+                            goAbout = true
+                        }
                     }
                 }
            // }
         }
     }
+
 
     struct SavedQuestions: View {
         var body: some View {
