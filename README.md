@@ -9,13 +9,16 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 
 - `mongodb+srv://quizAppMobileUser:xkLaBBaa1dTsZuX8@quizappdb.7ltdg.mongodb.net/test`
 
-## Fall 2022 Team Memebrs
-- Neha Lalani - Frontend Team
-- Aahan Kerawala - Frontend Team
+## Spring 2023 Team Memebrs
+- Sanjit Pingili - Frontend Team
+- Sahana Krishnan - Frontend Team
+- Varun Patel - Frontend Team
 - Sakshi Deshpande - Frontend Team
 - Zhen Hong Tan - Backend Team
-- Sabina Ajjan - Backend Team
+- Alvin Fabrio - Backend Team
+- Rishi Nopany - Backend Team
 - Devang Ajmera - Backend Team
+- Samarth Parameswar - Backend team
 
 ## [Figma Link to Wireframing](https://www.figma.com/file/QxqNtFrd8C7XOSHJsooLfQ/SWIFT-App-Protype?node-id=0%3A1&t=qOEb56QCIo9ARpFr-0)
 
