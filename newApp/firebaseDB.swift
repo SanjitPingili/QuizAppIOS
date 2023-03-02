@@ -6,3 +6,9 @@
 //
 
 import Foundation
+struct firebaseDB: Identifiable {
+    var id: String
+    var UserName: String
+    var Password: String
+    // var SeenQuestions: String
+}
