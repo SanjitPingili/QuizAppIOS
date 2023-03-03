@@ -97,9 +97,13 @@ struct LogIn: View {
 
 }
 struct Register: View {
+    @State private var firstname = ""
+    @State private var lastname = ""
     @State private var username = ""
     @State private var password = ""
     @State private var reenteredPassword = ""
+    @State private var invalidFirstname = 0
+    @State private var invalidLastname = 0
     @State private var invalidUsername = 0
     @State private var invalidPassword = 0
     @State private var invalidPassword2 = 0
@@ -124,7 +128,18 @@ struct Register: View {
                         .font(.title)
                         .bold()
                         .padding(.bottom, 2.0)
-                    
+                    TextField("First Name", text: $firstname)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(invalidFirstname))
+                    TextField("Last Name", text: $lastname)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(invalidLastname))
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 300, height: 50)
