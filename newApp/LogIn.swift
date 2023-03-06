@@ -213,93 +213,93 @@ struct Home: View {
     var body: some View {
         
         //NavigationView {
-            VStack{
-            
-            VStack {
-                Text("Menu")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(nil)
-                    .bold()
-                    .padding(.bottom, 50.0)
-            }
-                VStack {
-                    
-                    Button("Settings") {
-                        //Check if user exists
-                        goSettings = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    
-                    
-                    NavigationLink(destination: Settings(), isActive: $goSettings) {
-                        EmptyView()
-                    }
-                    .padding(.vertical)
-                    
-                    Button("Flashcards") {
-                        //Check if user exists
-                        goFlashcards = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    
-                    
-                    NavigationLink(destination: QuizView(), isActive: $goFlashcards) {
-                        EmptyView()
-                    }
-                    .padding(.vertical)
-                    
-                    
-                    Button("Quizzes") {
-                        //Check if user exists
-                        goQuizzes = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    
-                    NavigationLink(destination: Quizzes(), isActive: $goQuizzes) {
-                        EmptyView()
-                    }
-                    .padding(.vertical)
-                    
-                    Button("Saved Questions") {
-                        //Check if user exists
-                        goSaved = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    
-                    NavigationLink(destination: SavedQuestions(), isActive: $goSaved) {
-                        EmptyView()
-                    }
-                    .padding(.vertical)
-
-                    Button("Progress") {
-                        //Check if user exists
-                        goProgress = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-
-                    NavigationLink(destination: Progress(), isActive: $goProgress) {
-                        EmptyView()
-                    }
-                    .padding(.vertical)
-                }
-            }
+//            VStack{
+//
+//            VStack {
+//                Text("Menu")
+//                    .font(.largeTitle)
+//                    .fontWeight(.bold)
+//                    .multilineTextAlignment(.center)
+//                    .lineLimit(nil)
+//                    .bold()
+//                    .padding(.bottom, 50.0)
+//            }
+//                VStack {
+//
+//                    Button("Settings") {
+//                        //Check if user exists
+//                        goSettings = true
+//                    }
+//                    .foregroundColor(.black)
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.orange)
+//                    .cornerRadius(10)
+//
+//
+//                    NavigationLink(destination: Settings(), isActive: $goSettings) {
+//                        EmptyView()
+//                    }
+//                    .padding(.vertical)
+//
+//                    Button("Flashcards") {
+//                        //Check if user exists
+//                        goFlashcards = true
+//                    }
+//                    .foregroundColor(.black)
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.orange)
+//                    .cornerRadius(10)
+//
+//
+//                    NavigationLink(destination: QuizView(), isActive: $goFlashcards) {
+//                        EmptyView()
+//                    }
+//                    .padding(.vertical)
+//
+//
+//                    Button("Quizzes") {
+//                        //Check if user exists
+//                        goQuizzes = true
+//                    }
+//                    .foregroundColor(.black)
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.orange)
+//                    .cornerRadius(10)
+//
+//                    NavigationLink(destination: Quizzes(), isActive: $goQuizzes) {
+//                        EmptyView()
+//                    }
+//                    .padding(.vertical)
+//
+//                    Button("Saved Questions") {
+//                        //Check if user exists
+//                        goSaved = true
+//                    }
+//                    .foregroundColor(.black)
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.orange)
+//                    .cornerRadius(10)
+//
+//                    NavigationLink(destination: SavedQuestions(), isActive: $goSaved) {
+//                        EmptyView()
+//                    }
+//                    .padding(.vertical)
+//
+//                    Button("Progress") {
+//                        //Check if user exists
+//                        goProgress = true
+//                    }
+//                    .foregroundColor(.black)
+//                    .frame(width: 300, height: 50)
+//                    .background(Color.orange)
+//                    .cornerRadius(10)
+//
+//                    NavigationLink(destination: Progress(), isActive: $goProgress) {
+//                        EmptyView()
+//                    }
+//                    .padding(.vertical)
+//                }
+//            }
         //}
         TabView(selection: $selectedTab) {
             Flashcards()
