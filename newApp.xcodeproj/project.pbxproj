@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EC6E36F29B283FA00994914 /* viewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E36E29B283FA00994914 /* viewA.swift */; };
+		1EC6E37129B2842A00994914 /* viewB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E37029B2842A00994914 /* viewB.swift */; };
+		1EC6E37329B2843900994914 /* viewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E37229B2843900994914 /* viewC.swift */; };
+		1EC6E37529B289CE00994914 /* viewD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E37429B289CE00994914 /* viewD.swift */; };
+		1EC6E37729B2911600994914 /* viewE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E37629B2911600994914 /* viewE.swift */; };
 		701E8E9529187AE800C7B744 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 701E8E9429187AE800C7B744 /* Realm */; };
 		701E8E9729187AE800C7B744 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 701E8E9629187AE800C7B744 /* RealmSwift */; };
 		701E8EA129188D6800C7B744 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E8EA029188D6800C7B744 /* UserData.swift */; };
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EC6E36E29B283FA00994914 /* viewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewA.swift; sourceTree = "<group>"; };
+		1EC6E37029B2842A00994914 /* viewB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewB.swift; sourceTree = "<group>"; };
+		1EC6E37229B2843900994914 /* viewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewC.swift; sourceTree = "<group>"; };
+		1EC6E37429B289CE00994914 /* viewD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewD.swift; sourceTree = "<group>"; };
+		1EC6E37629B2911600994914 /* viewE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewE.swift; sourceTree = "<group>"; };
 		701E8EA029188D6800C7B744 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		701E8EA229188D9B00C7B744 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		701E8EA62918964C00C7B744 /* Data.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = Data.json; sourceTree = "<group>"; };
@@ -90,6 +100,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EC6E36D29B283CF00994914 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6E36E29B283FA00994914 /* viewA.swift */,
+				1EC6E37029B2842A00994914 /* viewB.swift */,
+				1EC6E37229B2843900994914 /* viewC.swift */,
+				1EC6E37429B289CE00994914 /* viewD.swift */,
+				1EC6E37629B2911600994914 /* viewE.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EF55FC6D28E3891300AC9375 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +135,7 @@
 		EF55FC7828E3891300AC9375 /* newApp */ = {
 			isa = PBXGroup;
 			children = (
+				1EC6E36D29B283CF00994914 /* Views */,
 				701E8EA62918964C00C7B744 /* Data.json */,
 				EF55FC7928E3891300AC9375 /* newAppApp.swift */,
 				EF55FC7B28E3891300AC9375 /* LogIn.swift */,
@@ -295,10 +318,15 @@
 			files = (
 				701E8EA129188D6800C7B744 /* UserData.swift in Sources */,
 				EF55FC7C28E3891300AC9375 /* LogIn.swift in Sources */,
+				1EC6E36F29B283FA00994914 /* viewA.swift in Sources */,
 				701E8EA329188D9B00C7B744 /* DataLoader.swift in Sources */,
 				EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */,
 				EF10047F2913088400289C69 /* QuizView.swift in Sources */,
+				1EC6E37329B2843900994914 /* viewC.swift in Sources */,
 				EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */,
+				1EC6E37529B289CE00994914 /* viewD.swift in Sources */,
+				1EC6E37129B2842A00994914 /* viewB.swift in Sources */,
+				1EC6E37729B2911600994914 /* viewE.swift in Sources */,
 				EF55FCA528E600BE00AC9375 /* newPage1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,7 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"newApp/Preview Content\"";
-				DEVELOPMENT_TEAM = ARR6UGUTTS;
+				DEVELOPMENT_TEAM = 9AZVGKAJ3P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -492,7 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"newApp/Preview Content\"";
-				DEVELOPMENT_TEAM = ARR6UGUTTS;
+				DEVELOPMENT_TEAM = 9AZVGKAJ3P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

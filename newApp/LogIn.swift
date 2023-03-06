@@ -209,7 +209,9 @@ struct Home: View {
     @State private var goProgress = false
     @State private var goSettings = false
     @State private var goSaved = false
+    @State private var selectedTab = 0
     var body: some View {
+        
         //NavigationView {
             VStack{
             
@@ -299,6 +301,48 @@ struct Home: View {
                 }
             }
         //}
+        TabView(selection: $selectedTab) {
+            Flashcards()
+                .onTapGesture {
+                    selectedTab = 0
+                }
+                .tabItem() {
+                    Image(systemName: "doc.fill")
+                    Text("Flashcards")
+                }
+            Quizzes()
+                .onTapGesture {
+                    selectedTab = 1
+                }
+                .tabItem() {
+                    Image(systemName: "chart.bar.doc.horizontal.fill")
+                    Text("Quizzes")
+                }
+            SavedQuestions()
+                .onTapGesture {
+                    selectedTab = 2
+                }
+                .tabItem() {
+                    Image(systemName: "square.and.arrow.down.on.square.fill")
+                    Text("Saved Questions")
+                }
+            Progress()
+                .onTapGesture {
+                    selectedTab = 3
+                }
+                .tabItem() {
+                    Image(systemName: "chart.bar.xaxis")
+                    Text("Progress")
+                }
+            Settings()
+                .onTapGesture {
+                    selectedTab = 4
+                }
+                .tabItem() {
+                    Image(systemName: "gearshape.fill")
+                    Text("Settings")
+                }
+        }
     }
 }
     
@@ -448,12 +492,6 @@ struct Home: View {
         }
     }
 
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            LogIn()
-        }
-    }
-
 
 //new flash cards implementation
 
@@ -507,3 +545,8 @@ struct CardBack: View {
     }
 }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
+}
