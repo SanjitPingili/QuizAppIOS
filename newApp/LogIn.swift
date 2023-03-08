@@ -31,7 +31,7 @@ struct LogIn: View {
                     .scale(1)
                     .foregroundColor(.white)
                 VStack {
-                    Text("Welcome to TutorBot")
+                    Text("Welcome to QuizApp")
                         .font(.title)
                         .bold()
                         .padding(.bottom, 2.0)
@@ -483,22 +483,42 @@ struct Home: View {
     struct SavedQuestions: View {
         var body: some View {
             // NavigationView {
-                ZStack {
-                    Rectangle()
-                        .scale(0.3)
+            VStack {
+                List {
+                    Button("Flagged Questions") {
+                        //Check if user exists
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    
+                    Button("Incorrect Questions") {
+                        //Check if user exists
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
                 }
+            }
             //}
         }
     }
 
     struct Progress: View {
         var body: some View {
-            //NavigationView {
-                ZStack {
-                    Rectangle()
-                        .scale(0.3)
+            VStack {
+                List {
+                    Button("Quiz Summary") {
+                        //Check if user exists
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
                 }
-            //}
+            }
         }
     }
 
