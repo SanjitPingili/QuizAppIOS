@@ -2,3 +2,5 @@
 *.xcuserstate
 newApp.xcodeproj/project.xcworkspace/xcuserdata/aahankerawala.xcuserdatad/UserInterfaceState.xcuserstate
 newApp.xcodeproj/project.xcworkspace/xcuserdata/aahankerawala.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store
+newApp.xcodeproj/project.pbxproj
