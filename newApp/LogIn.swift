@@ -445,7 +445,7 @@ struct Home: View {
                         .cornerRadius(10)
                         .padding(.vertical)
                         Button("Next") {
-                            //goes to next question
+                            
                         }
                         .foregroundColor(.black)
                         .frame(width: 100, height: 50)
@@ -508,7 +508,7 @@ struct Home: View {
 
                         Button("Privacy") {
                             //Check if user exists
-                            goAbout = true
+                            goPrivacy = true
                         }
                         .foregroundColor(.black)
                         .frame(width: 300, height: 50)
@@ -518,11 +518,16 @@ struct Home: View {
                         Button("About") {
                             //Check if user exists
                             goAbout = true
+                        
                         }
                         .foregroundColor(.black)
                         .frame(width: 300, height: 50)
                         .background(Color.orange)
                         .cornerRadius(10)
+                        
+                        NavigationLink(destination: About(), isActive: $goAbout) {
+                            EmptyView()
+                        }
                     }
                 }
            // }
@@ -571,6 +576,18 @@ struct Home: View {
             }
         }
     }
+
+struct About: View {
+    var body: some View {
+        Text("This is Quiz App which is an Application started by the ITS VIP in Fall 2022.")
+            .fontWeight(.bold)
+            .multilineTextAlignment(.leading)
+            .lineLimit(nil)
+            .bold()
+            .padding(.bottom, 600.0)
+            .frame(width:350)
+    }
+}
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
