@@ -40,7 +40,7 @@ public class DataLoader {
                         
                         // Get all the documents and create Todos
                         self.list = snapshot.documents.map { d in
-                            
+                            print(d["UserName"])
                             // Create a Todo item for each document returned
                             return firebaseDB(id: d.documentID,
                                                                    UserName: d["name"] as? String ?? "",
