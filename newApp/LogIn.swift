@@ -232,122 +232,52 @@ struct Home: View {
     @State private var goProgress = false
     @State private var goSettings = false
     @State private var goSaved = false
+    @State private var selectedTab = 0
+
     var body: some View {
-        //NavigationView {
-            VStack{
-            
-            VStack {
-                Color.orange.ignoresSafeArea()
-                Circle()
-                    .scale(1.7)
-                    .foregroundColor(.white.opacity(0.4))
-                Circle()
-                    .scale(1.35)
-                    .foregroundColor(.white.opacity(0.4))
-                Circle()
-                    .scale(1)
-                    .foregroundColor(.white)
-                Image(systemName: "person.crop.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.bottom, 60)
-                    .frame(width: 100, height: 100, alignment: .topTrailing)
-                        .offset(x: 100, y: 0)
-                    NavigationLink(destination: Settings(), isActive: $goSettings) {
-                        EmptyView()
-                    }
-                Text("Menu")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(nil)
-                    .bold()
-                    .padding(.bottom, 20.0)
-            }
-                VStack() {
-                    
-                    VStack() {
-                        Button("Settings") {
-                            //Check if user exists
-                            goSettings = true
+        
+        TabView(selection: $selectedTab) {
+                    QuizView()
+                        .onTapGesture {
+                            selectedTab = 0
                         }
-                        .foregroundColor(.black)
-                        .frame(width: 180, height: 80)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.trailing, 150)
-                        
-                        NavigationLink(destination: Settings(), isActive: $goSettings) {
-                            EmptyView()
+                        .tabItem() {
+                            Image(systemName: "doc.fill")
+                            Text("Flashcards")
                         }
-                        .padding(.vertical)
-                    }
-                    VStack(){
-                        Button("Flashcards") {
-                            //Check if user exists
-                            goFlashcards = true
+                    Quizzes()
+                        .onTapGesture {
+                            selectedTab = 1
                         }
-                        .foregroundColor(.black)
-                        .frame(width: 180, height: 80)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.leading, 150)
-                        
-                        NavigationLink(destination: QuizView(), isActive: $goFlashcards) {
-                            EmptyView()
+                        .tabItem() {
+                            Image(systemName: "chart.bar.doc.horizontal.fill")
+                            Text("Quizzes")
                         }
-                        .padding(.vertical)
-                    }
-                    VStack(){
-                        Button("Quizzes") {
-                            //Check if user exists
-                            goQuizzes = true
+                    SavedQuestions()
+                        .onTapGesture {
+                            selectedTab = 2
                         }
-                        .foregroundColor(.black)
-                        .frame(width: 180, height: 80)
-                        .background(Color.red)
-                        .cornerRadius(10)
-                        .padding(.trailing, 150)
-                        
-                        NavigationLink(destination: Quizzes(), isActive: $goQuizzes) {
-                            EmptyView()
+                        .tabItem() {
+                            Image(systemName: "square.and.arrow.down.on.square.fill")
+                            Text("Saved Questions")
                         }
-                        .padding(.vertical)
-                    }
-                    VStack(){
-                        Button("Saved Questions") {
-                            //Check if user exists
-                            goSaved = true
+                    Progress()
+                        .onTapGesture {
+                            selectedTab = 3
                         }
-                        .foregroundColor(.black)
-                        .frame(width: 180, height: 80)
-                        .background(Color.yellow)
-                        .cornerRadius(10)
-                        .padding(.leading, 150)
-                        
-                        NavigationLink(destination: SavedQuestions(), isActive: $goSaved) {
-                            EmptyView()
+                        .tabItem() {
+                            Image(systemName: "chart.bar.xaxis")
+                            Text("Progress")
                         }
-                        .padding(.vertical)
-                    }
-                    VStack(){
-                        Button("Progress") {
-                            //Check if user exists
-                            goProgress = true
+                    Settings()
+                        .onTapGesture {
+                            selectedTab = 4
                         }
-                        .foregroundColor(.black)
-                        .frame(width: 180, height: 80)
-                        .background(Color.pink)
-                        .cornerRadius(10)
-                        .padding(.trailing, 150)
-                        
-                        NavigationLink(destination: Progress(), isActive: $goProgress) {
-                            EmptyView()
+                        .tabItem() {
+                            Image(systemName: "gearshape.fill")
+                            Text("Settings")
                         }
-                        .padding(.vertical)
-                    }
                 }
-            }
         //}
     }
 }
@@ -630,4 +560,3 @@ struct CardBack: View {
         } .rotation3DEffect(Angle(degrees: degree), axis: (x: 0.0, y: 1.0, z: 0.0))
     }
 }
-
