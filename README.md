@@ -14,11 +14,11 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 - Sahana Krishnan - Frontend Team
 - Varun Patel - Frontend Team
 - Sakshi Deshpande - Frontend Team
+- Samarth Parameswar - Frontend team
 - Zhen Hong Tan - Backend Team
 - Alvin Fabrio - Backend Team
 - Rishi Nopany - Backend Team
 - Devang Ajmera - Backend Team
-- Samarth Parameswar - Backend team
 
 ## [Figma Link to Wireframing](https://www.figma.com/file/QxqNtFrd8C7XOSHJsooLfQ/SWIFT-App-Protype?node-id=0%3A1&t=qOEb56QCIo9ARpFr-0)
 
