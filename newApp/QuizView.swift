@@ -22,7 +22,7 @@ struct QuizView: View {
     let durationAndDelay: CGFloat = 0.2
 
     @State var questionNum = 0
-
+    @State var num = Int.random(in: 1..<5140)
     var body: some View {
         /*
         let realm = try! Realm()
@@ -46,11 +46,20 @@ struct QuizView: View {
             }
         }
          */
+        
+        
+        
             ZStack {
-                var num = Int.random(in: 1..<5140)
+                
                 Button("Next") {
+                    num = Int.random(in: 1..<5140)
+                    if (isFlipped == false) {
+                        flipCard()
+                        isFlipped.toggle()
+                    }
                 }.offset(x: 130, y:380)
                 //.onTapGesture(perform: <#T##() -> Void#>)
+                
                 CardFront(degree: $frontDeg, textContext: data[num].Question)
                 CardBack(degree: $backDeg, textContext:  data[num].Answer)
             }.onTapGesture {
@@ -59,7 +68,6 @@ struct QuizView: View {
         
 
     }
-    
     func flipCard() {
 
         isFlipped.toggle()
