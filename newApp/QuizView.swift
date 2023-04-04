@@ -6,10 +6,13 @@
 
 
 import SwiftUI
+import Firebase
 //import RealmSwift
 //let realmApp = RealmSwift.App(id: "application-0-usith")
 
 let data = DataLoader().userData
+let userD = DataLoader().userD
+var seen = DataLoader().seen
 
 struct QuizView: View {
    
@@ -17,11 +20,16 @@ struct QuizView: View {
     @State var backDeg = 90.0
     @State var frontDeg = 0.0
     @State var isFlipped = false
+    @State var question: String = data[Int.random(in: 1..<5140)].Question
+    @State var answer: String = data[Int.random(in: 1..<5140)].Answer
+
 
 
     let durationAndDelay: CGFloat = 0.2
-
+    
     @State var questionNum = 0
+    
+    
 
     var body: some View {
         /*
@@ -47,12 +55,19 @@ struct QuizView: View {
         }
          */
             ZStack {
-                var num = Int.random(in: 1..<5140)
+                //var num = Int.random(in: 1..<5140)
+               
+                //seen.append(UserData(Question: data[num].Question, Answer: data[num].Answer, Chapter: ""))
                 Button("Next") {
+                    var num = Int.random(in: 1..<5140)
+                    question = data[num].Question
+                    answer = data[num].Answer
+                    seen.append(UserData(Question: data[num].Question, Answer: data[num].Answer, Chapter: ""))
+                    write()
                 }.offset(x: 130, y:380)
                 //.onTapGesture(perform: <#T##() -> Void#>)
-                CardFront(degree: $frontDeg, textContext: data[num].Question)
-                CardBack(degree: $backDeg, textContext:  data[num].Answer)
+                CardFront(degree: $frontDeg, textContext: question)
+                CardBack(degree: $backDeg, textContext:  answer)
             }.onTapGesture {
                 flipCard()
             }
@@ -61,7 +76,6 @@ struct QuizView: View {
     }
     
     func flipCard() {
-
         isFlipped.toggle()
 
         if isFlipped{
@@ -83,15 +97,24 @@ struct QuizView: View {
             }
 
         }
-
-
     }
-
-
-
-
-
-
+    
+    func write() {
+        print("in writing")
+        let db = Firestore.firestore()
+        //for item in seen {
+            // Get the document reference for the current user
+            let userRef = db.collection("UserData").document("YDe6sFkZZC4BJVYoSXq6")
+            
+            // Create a new collection of questions and answers for this user
+            let qaCollectionRef = userRef.collection("QuestionsAndAnswers")
+            
+            print("writing to firebase")
+            // Write the data to the collection
+        let data = ["Question": seen[seen.count-1].Question, "Answer": seen[seen.count-1].Answer]
+            qaCollectionRef.addDocument(data: data)
+       // }
+    }
 }
 
 

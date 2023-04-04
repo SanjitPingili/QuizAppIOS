@@ -5,54 +5,110 @@
 //  Created by Zhen Hong Tan on 11/6/22.
 //
 
+
 import Foundation
 import Firebase
-public class DataLoader {
+
+public class DataLoader: ObservableObject {
     @Published var userData = [UserData]()
-    @Published var list = [firebaseDB]()
+    @Published var firebaseData = [firebaseDB]()
+    @Published var userD = [firebaseDB]()
+    @Published var seen = [UserData]()
 
     
     init() {
         load()
         sort()
         removeUnknown()
-        check()
-        getData()
-        
+        getData {
+            self.loadData {
+                print("Firebase is loaded")
+            }
+        }
+        write()
     }
     
-    func getData() {
-        print("here")
-        // Get a reference to the database
+    func write() {
+        print("in writing")
         let db = Firestore.firestore()
-        
-        // Read the documents at a specific path
-        db.collection("UserData").getDocuments { snapshot, error in
+        for item in seen {
+            // Get the document reference for the current user
+            let userRef = db.collection("UserData").document("YDe6sFkZZC4BJVYoSXq6")
             
-            // Check for errors
-            if error == nil {
-                // No errors
-                
-                if let snapshot = snapshot {
-                    
-                    // Update the list property in the main thread
-                    DispatchQueue.main.async {
-                        
-                        // Get all the documents and create Todos
-                        self.list = snapshot.documents.map { d in
-                            print(d["UserName"])
-                            // Create a Todo item for each document returned
-                            return firebaseDB(id: d.documentID,
-                                                                   UserName: d["name"] as? String ?? "",
-                                                                   Password: d["notes"] as? String ?? "")
+            // Create a new collection of questions and answers for this user
+            let qaCollectionRef = userRef.collection("QuestionsAndAnswers")
+            
+            print("writing to firebase")
+            // Write the data to the collection
+            let data = ["Question": item.Question, "Answer": item.Answer]
+            qaCollectionRef.addDocument(data: data)
+        }
+    }
+    
+    func convertFirebaseDBObjectToFirebaseDB() {
+        self.firebaseData = self.firebaseData.compactMap { firebaseDBObject in
+            firebaseDB(id: firebaseDBObject.id ?? "", UserName: firebaseDBObject.UserName ?? "", Password: firebaseDBObject.Password ?? "")
+        }
+    }
+    
+    func loadingData() {
+        let myFirebaseData = self.firebaseData
+        for firebaseDBObject in myFirebaseData {
+            print(firebaseDBObject.UserName)
+            print(firebaseDBObject.Password)
+        }
+    }
+    
+    func loadData(completion: @escaping () -> Void) {
+        // Read the documents at a specific path
+        Firestore.firestore().collection("UserData").getDocuments { snapshot, error in
+            if error == nil, let snapshot = snapshot {
+                // Update the list property in the main thread
+                DispatchQueue.main.async {
+                    // Get all the documents and create firebaseDB objects
+                    self.firebaseData = snapshot.documents.compactMap { d in
+                        guard let name = d["UserName"] as? String, let password = d["Password"] as? String else {
+                            return nil
                         }
+                        return firebaseDB(id: d.documentID, UserName: name, Password: password)
                     }
-                    
-                    
+                    completion()
                 }
             }
             else {
                 // Handle the error
+            }
+        }
+    }
+    
+    func getData(completion: @escaping () -> Void) {
+        // Call the completion handler after firebaseData is fully populated
+        doSomethingWithFirebaseData {
+            completion()
+        }
+    }
+    
+    func doSomethingWithFirebaseData(completion: @escaping () -> Void) {
+        Firestore.firestore().collection("UserData").getDocuments { snapshot, error in
+            if error == nil, let snapshot = snapshot {
+                // Get all the documents and create firebaseDB objects
+                self.firebaseData = snapshot.documents.compactMap { d in
+                    guard let name = d["UserName"] as? String, let password = d["Password"] as? String else {
+                        return nil
+                    }
+                    return firebaseDB(id: d.documentID, UserName: name, Password: password)
+                }
+                
+                // Initialize userD after firebaseData is loaded
+                self.userD = self.firebaseData.map { firebaseDBObject in
+                    let n = firebaseDBObject.UserName
+                    let p = firebaseDBObject.Password
+                    print(n)
+                    print(p)
+                    return firebaseDB(id: "random", UserName: n, Password: p)
+                }
+                
+                completion()
             }
         }
     }
@@ -63,10 +119,8 @@ public class DataLoader {
                 let data = try Data(contentsOf: fileLocation)
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([UserData].self, from: data)
-                
                 self.userData = dataFromJson
             } catch {
-
                 print(error)
             }
         }
@@ -91,13 +145,4 @@ public class DataLoader {
         }
         print(num)
     }
-    
-    func check() {
-        var num = 0
-        while(num < 5140) {
-           // print(userData[num].Answer)
-            num += 1
-        }
-    }
-    
 }

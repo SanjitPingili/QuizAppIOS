@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 let ques = DataLoader().userData
 
 struct LogIn: View {
@@ -15,6 +16,9 @@ struct LogIn: View {
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
     @State private var goRegister = false
+    
+    @EnvironmentObject var dataLoader: DataLoader
+    
 
     var body: some View {
         NavigationView {
