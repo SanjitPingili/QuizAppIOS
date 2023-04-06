@@ -521,9 +521,9 @@ struct Settings: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var goChangeUsername = false
     @State private var goChangePassword = false
+    @State private var goAbout = false
     @State private var goAppVersion = false
     @State private var goPrivacy = false
-    @State private var goAbout = false
     
     var body: some View {
         NavigationView {
@@ -566,34 +566,38 @@ struct Settings: View {
                     .cornerRadius(10)
 
                     
-                    Button("App Version") {
-                        //Check if user exists
-                        goAppVersion = true
+                    NavigationLink(destination: Text("Your data is private"), isActive: $goPrivacy) {
+                        Button("Privacy") {
+                            goPrivacy = true
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
                     }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-
-                    Button("Privacy") {
-                        //Check if user exists
-                        goPrivacy = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
                     
-                    NavigationLink(destination: Text("This is the About Page")) {
-                        Text("About")
-                            .foregroundColor(.black)
-                            .frame(width: 300, height: 50)
-                            .background(Color.orange)
-                            .cornerRadius(10)
+                    NavigationLink(destination: Text("Version 1.0"), isActive: $goAppVersion) {
+                        Button("App Version") {
+                            goAppVersion = true
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                    }
+
+                    NavigationLink(destination: Text("This is QuizApp"), isActive: $goAbout) {
+                        Button("About") {
+                            goAbout = true
+                        }
+                        .foregroundColor(.black)
+                        .frame(width: 300, height: 50)
+                        .background(Color.orange)
+                        .cornerRadius(10)
                     }
                 }
-                .navigationBarTitle("Settings")
             }
+            .navigationTitle("Settings")
         }
     }
 }
