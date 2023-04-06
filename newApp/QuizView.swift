@@ -2,7 +2,7 @@
 //  QuizView.swift
 //  newApp
 //
-//  Created by Neha Lalani on 11/2/22.
+//  Created by Sanjit Pingili on 03/12/23.
 
 
 import SwiftUI
@@ -10,6 +10,7 @@ import SwiftUI
 //let realmApp = RealmSwift.App(id: "application-0-usith")
 
 let data = DataLoader().userData
+var num = Int.random(in: 1..<5140)
 
 struct QuizView: View {
     var body: some View {

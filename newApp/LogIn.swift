@@ -8,6 +8,10 @@
 import SwiftUI
 let ques = DataLoader().userData
 
+struct GlobalVariables {
+    static var flagArr = [Int]()
+}
+
 struct LogIn: View {
     @State private var username = ""
     @State private var password = ""
@@ -58,7 +62,7 @@ struct LogIn: View {
                     .cornerRadius(10)
                     .padding(.bottom, 3.0)
                     
-                    NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
+                    NavigationLink(destination: Home1(), isActive: $showingLoginScreen) {
                         EmptyView()
                     }
                     Button("Register") {
@@ -226,6 +230,134 @@ struct Register: View {
 
 }
 
+struct Home1: View {
+    @State private var goFlashcards = false
+    @State private var goQuizzes = false
+    @State private var goProgress = false
+    @State private var goSettings = false
+    @State private var goSaved = false
+    @State private var selectedTab = 0
+    
+    var body: some View {
+            //NavigationView {
+                VStack{
+                
+                VStack {
+                    Color.orange.ignoresSafeArea()
+                    Circle()
+                        .scale(1.7)
+                        .foregroundColor(.white.opacity(0.4))
+                    Circle()
+                        .scale(1.35)
+                        .foregroundColor(.white.opacity(0.4))
+                    Circle()
+                        .scale(1)
+                        .foregroundColor(.white)
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 60)
+                        .frame(width: 100, height: 100, alignment: .topTrailing)
+                            .offset(x: 100, y: 0)
+                        NavigationLink(destination: Settings(), isActive: $goSettings) {
+                            EmptyView()
+                        }
+                    Text("Menu")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .bold()
+                        .padding(.bottom, 20.0)
+                }
+                    VStack() {
+                        
+                        VStack() {
+                            Button("Settings") {
+                                //Check if user exists
+                                goSettings = true
+                            }
+                            .foregroundColor(.black)
+                            .frame(width: 180, height: 80)
+                            .background(Color.orange)
+                            .cornerRadius(10)
+                            .padding(.trailing, 150)
+                            
+                            NavigationLink(destination: Settings(), isActive: $goSettings) {
+                                EmptyView()
+                            }
+                            .padding(.vertical)
+                        }
+                        VStack(){
+                            Button("Flashcards") {
+                                //Check if user exists
+                                goFlashcards = true
+                            }
+                            .foregroundColor(.black)
+                            .frame(width: 180, height: 80)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .padding(.leading, 150)
+                            
+                            NavigationLink(destination: Home(), isActive: $goFlashcards) {
+                                EmptyView()
+                            }
+                            .padding(.vertical)
+                        }
+                        VStack(){
+                            Button("Quizzes") {
+                                //Check if user exists
+                                goQuizzes = true
+                            }
+                            .foregroundColor(.black)
+                            .frame(width: 180, height: 80)
+                            .background(Color.red)
+                            .cornerRadius(10)
+                            .padding(.trailing, 150)
+                            
+                            NavigationLink(destination: Quizzes(), isActive: $goQuizzes) {
+                                EmptyView()
+                            }
+                            .padding(.vertical)
+                        }
+                        VStack(){
+                            Button("Saved Questions") {
+                                //Check if user exists
+                                goSaved = true
+                            }
+                            .foregroundColor(.black)
+                            .frame(width: 180, height: 80)
+                            .background(Color.yellow)
+                            .cornerRadius(10)
+                            .padding(.leading, 150)
+                            
+                            NavigationLink(destination: SavedQuestions(), isActive: $goSaved) {
+                                EmptyView()
+                            }
+                            .padding(.vertical)
+                        }
+                        VStack(){
+                            Button("Progress") {
+                                //Check if user exists
+                                goProgress = true
+                            }
+                            .foregroundColor(.black)
+                            .frame(width: 180, height: 80)
+                            .background(Color.pink)
+                            .cornerRadius(10)
+                            .padding(.trailing, 150)
+                            
+                            NavigationLink(destination: Progress(), isActive: $goProgress) {
+                                EmptyView()
+                            }
+                            .padding(.vertical)
+                        }
+                    }
+                }
+            //}
+        }
+}
+
 struct Home: View {
     @State private var goFlashcards = false
     @State private var goQuizzes = false
@@ -233,55 +365,52 @@ struct Home: View {
     @State private var goSettings = false
     @State private var goSaved = false
     @State private var selectedTab = 0
-
+    
     var body: some View {
-        
         TabView(selection: $selectedTab) {
-                    QuizView()
-                        .onTapGesture {
-                            selectedTab = 0
-                        }
-                        .tabItem() {
-                            Image(systemName: "doc.fill")
-                            Text("Flashcards")
-                        }
-                    Quizzes()
-                        .onTapGesture {
-                            selectedTab = 1
-                        }
-                        .tabItem() {
-                            Image(systemName: "chart.bar.doc.horizontal.fill")
-                            Text("Quizzes")
-                        }
-                    SavedQuestions()
-                        .onTapGesture {
-                            selectedTab = 2
-                        }
-                        .tabItem() {
-                            Image(systemName: "square.and.arrow.down.on.square.fill")
-                            Text("Saved Questions")
-                        }
-                    Progress()
-                        .onTapGesture {
-                            selectedTab = 3
-                        }
-                        .tabItem() {
-                            Image(systemName: "chart.bar.xaxis")
-                            Text("Progress")
-                        }
-                    Settings()
-                        .onTapGesture {
-                            selectedTab = 4
-                        }
-                        .tabItem() {
-                            Image(systemName: "gearshape.fill")
-                            Text("Settings")
-                        }
+            QuizView()
+                .onTapGesture {
+                    selectedTab = 0
                 }
-        //}
+                .tabItem() {
+                    Image(systemName: "doc.fill")
+                    Text("Flashcards")
+                }
+            Quizzes()
+                .onTapGesture {
+                    selectedTab = 1
+                }
+                .tabItem() {
+                    Image(systemName: "chart.bar.doc.horizontal.fill")
+                    Text("Quizzes")
+                }
+            SavedQuestions()
+                .onTapGesture {
+                    selectedTab = 2
+                }
+                .tabItem() {
+                    Image(systemName: "square.and.arrow.down.on.square.fill")
+                    Text("Saved Questions")
+                }
+            Progress()
+                .onTapGesture {
+                    selectedTab = 3
+                }
+                .tabItem() {
+                    Image(systemName: "chart.bar.xaxis")
+                    Text("Progress")
+                }
+            Settings()
+                .onTapGesture {
+                    selectedTab = 4
+                }
+                .tabItem() {
+                    Image(systemName: "gearshape.fill")
+                    Text("Settings")
+                }
+        }
     }
 }
-    
     struct Flashcards: View {
         var body: some View {
             //NavigationView {
@@ -461,18 +590,22 @@ struct Home: View {
 
 
     struct SavedQuestions: View {
+        @State private var flag = false
         var body: some View {
             // NavigationView {
             VStack {
                 List {
                     Button("Flagged Questions") {
-                        //Check if user exists
+                        flag = true;
                     }
                     .foregroundColor(.black)
                     .frame(width: 300, height: 50)
                     .background(Color.orange)
                     .cornerRadius(10)
                     
+//                    NavigationLink(destination: SavedView(), isActive: $flag) {
+//                        EmptyView()
+//                    }
                     Button("Incorrect Questions") {
                         //Check if user exists
                     }
@@ -482,9 +615,10 @@ struct Home: View {
                     .cornerRadius(10)
                 }
             }
-            //}
+            
         }
     }
+
 
     struct Progress: View {
         var body: some View {

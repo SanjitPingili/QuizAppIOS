@@ -50,10 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		680BA30429B1056900E4F2D9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		08EF5C755511A184853CA937 /* Pods-newApp-newAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newApp-newAppUITests.release.xcconfig"; path = "Target Support Files/Pods-newApp-newAppUITests/Pods-newApp-newAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F69DDD38C6BFEDC265E0FFE /* Pods-newApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newApp.debug.xcconfig"; path = "Target Support Files/Pods-newApp/Pods-newApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C0B90FF7F138E0D548DD681 /* Pods-newApp-newAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newApp-newAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-newApp-newAppUITests/Pods-newApp-newAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		680BA30429B1056900E4F2D9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		701E8EA029188D6800C7B744 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		701E8EA229188D9B00C7B744 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		701E8EA62918964C00C7B744 /* Data.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = Data.json; sourceTree = "<group>"; };
