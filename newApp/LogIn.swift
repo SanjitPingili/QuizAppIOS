@@ -526,72 +526,73 @@ struct Settings: View {
     @State private var goAbout = false
     
     var body: some View {
-        VStack {
-            List {
-                Button("Change Username") {
-                    //Check if user exists
-                    goChangeUsername = true
-                }
-                .foregroundColor(.black)
-                .frame(width: 300, height: 50)
-                .background(Color.orange)
-                .cornerRadius(10)
-                
-                Button("Change Password") {
-                    //Check if user exists
-                    goChangePassword = true
-                }
-                .foregroundColor(.black)
-                .frame(width: 300, height: 50)
-                .background(Color.orange)
-                .cornerRadius(10)
-
-                Toggle(isOn: Binding<Bool>(
-                        get: { self.colorScheme == .dark },
-                        set: { _ in
-                            if colorScheme == .light {
-                                UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
-                            } else {
-                                UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
-                            }
-                        }
-                    )
-                ) {
-                    Text("Dark Mode")
-                }
-                .foregroundColor(.black)
-                .frame(width: 300, height: 50)
-                .background(Color.orange)
-                .cornerRadius(10)
-
-                
-                Button("App Version") {
-                    //Check if user exists
-                    goAppVersion = true
-                }
-                .foregroundColor(.black)
-                .frame(width: 300, height: 50)
-                .background(Color.orange)
-                .cornerRadius(10)
-
-                Button("Privacy") {
-                    //Check if user exists
-                    goAbout = true
-                }
-                .foregroundColor(.black)
-                .frame(width: 300, height: 50)
-                .background(Color.orange)
-                .cornerRadius(10)
-                
-                NavigationLink(destination: Text("About QuizApp"), isActive: $goAbout) {
-                    Button("About") {
-                        goAbout = true
+        NavigationView {
+            VStack {
+                List {
+                    Button("Change Username") {
+                        //Check if user exists
+                        goChangeUsername = true
                     }
                     .foregroundColor(.black)
                     .frame(width: 300, height: 50)
                     .background(Color.orange)
                     .cornerRadius(10)
+                    
+                    Button("Change Password") {
+                        //Check if user exists
+                        goChangePassword = true
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+
+                    Toggle(isOn: Binding<Bool>(
+                            get: { self.colorScheme == .dark },
+                            set: { _ in
+                                if colorScheme == .light {
+                                    UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
+                                } else {
+                                    UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
+                                }
+                            }
+                        )
+                    ) {
+                        Text("Dark Mode")
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+
+                    
+                    Button("App Version") {
+                        //Check if user exists
+                        goAppVersion = true
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+
+                    Button("Privacy") {
+                        //Check if user exists
+                        goPrivacy = true
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    
+                    NavigationLink(destination: Text("This is the About Page")) {
+                        Text("About")
+                            .foregroundColor(.black)
+                            .frame(width: 300, height: 50)
+                            .background(Color.orange)
+                            .cornerRadius(10)
+                    }
                 }
+                .navigationBarTitle("Settings")
             }
         }
     }
