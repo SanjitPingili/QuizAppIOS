@@ -517,76 +517,84 @@ struct Home: View {
         }
     }
 
-    struct Settings: View {
-        @State private var goChangeUsername = false
-        @State private var goChangePassword = false
-        @State private var goDarkMode = false
-        @State private var goAppVersion = false
-        @State private var goPrivacy = false
-        @State private var goAbout = false
-        var body: some View {
-           // NavigationView {
-                VStack {
-                    List {
-                        Button("Change Username") {
-                            //Check if user exists
-                            goChangeUsername = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        
-                        Button("Change Password") {
-                            //Check if user exists
-                            goChangePassword = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-
-                        Button("DarkMode") {
-                            //Check if user exists
-                            goDarkMode = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-
-                        
-                        Button("App Version") {
-                            //Check if user exists
-                            goAppVersion = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-
-                        Button("Privacy") {
-                            //Check if user exists
-                            goAbout = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        
-                        Button("About") {
-                            //Check if user exists
-                            goAbout = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                    }
+struct Settings: View {
+    @Environment(\.colorScheme) var colorScheme
+    @State private var goChangeUsername = false
+    @State private var goChangePassword = false
+    @State private var goAppVersion = false
+    @State private var goPrivacy = false
+    @State private var goAbout = false
+    
+    var body: some View {
+        VStack {
+            List {
+                Button("Change Username") {
+                    //Check if user exists
+                    goChangeUsername = true
                 }
-           // }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                
+                Button("Change Password") {
+                    //Check if user exists
+                    goChangePassword = true
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+
+                Toggle(isOn: Binding<Bool>(
+                        get: { self.colorScheme == .dark },
+                        set: { _ in
+                            if colorScheme == .light {
+                                UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
+                            } else {
+                                UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
+                            }
+                        }
+                    )
+                ) {
+                    Text("Dark Mode")
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+
+                
+                Button("App Version") {
+                    //Check if user exists
+                    goAppVersion = true
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+
+                Button("Privacy") {
+                    //Check if user exists
+                    goAbout = true
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                
+                Button("About") {
+                    //Check if user exists
+                    goAbout = true
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+            }
         }
     }
+}
 
 
     struct SavedQuestions: View {
