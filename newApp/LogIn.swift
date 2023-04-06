@@ -583,18 +583,20 @@ struct Settings: View {
                 .background(Color.orange)
                 .cornerRadius(10)
                 
-                Button("About") {
-                    //Check if user exists
-                    goAbout = true
+                NavigationLink(destination: Text("About QuizApp"), isActive: $goAbout) {
+                    Button("About") {
+                        goAbout = true
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 300, height: 50)
+                    .background(Color.orange)
+                    .cornerRadius(10)
                 }
-                .foregroundColor(.black)
-                .frame(width: 300, height: 50)
-                .background(Color.orange)
-                .cornerRadius(10)
             }
         }
     }
 }
+
 
 
     struct SavedQuestions: View {
