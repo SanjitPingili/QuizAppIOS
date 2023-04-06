@@ -32,7 +32,7 @@ struct ContentView: View {
                         Text(set1.capitalized)
                         Spacer()
                         Image(systemName: "studentdesk")
-                            .foregroundColor(Color.blue.opacity(0.8))
+                            .foregroundColor(Color.orange.opacity(0.8))
                     }
                     .padding()
                 }
@@ -41,7 +41,7 @@ struct ContentView: View {
                         Text(set1.capitalized)
                         Spacer()
                         Image(systemName: "pencil")
-                            .foregroundColor(Color.blue.opacity(0.8))
+                            .foregroundColor(Color.orange.opacity(0.8))
                     }
                     .padding()
                 }
