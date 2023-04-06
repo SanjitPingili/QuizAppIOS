@@ -398,6 +398,10 @@ struct Home: View {
         var body: some View {
            // NavigationView {
                 VStack {
+                        Text("Settings")
+                            .font(.largeTitle)
+                            .bold()
+                            .padding(.bottom, 5)
                     List {
                         Button("Change Username") {
                             //Check if user exists
@@ -455,10 +459,10 @@ struct Home: View {
                         .background(Color.orange)
                         .cornerRadius(10)
                         
-                        NavigationLink(destination: About(), isActive: $goAbout) {
-                            EmptyView()
-                        }
                     }
+                    NavigationLink(destination: About(), isActive: $goAbout) {
+                    EmptyView()
+                }
                 }
            // }
         }
@@ -469,6 +473,12 @@ struct Home: View {
         var body: some View {
             // NavigationView {
             VStack {
+                HStack {
+                    Text("Saved Questions")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.bottom, 5)
+                }
                 List {
                     Button("Flagged Questions") {
                         //Check if user exists
@@ -494,6 +504,12 @@ struct Home: View {
     struct Progress: View {
         var body: some View {
             VStack {
+                HStack {
+                    Text("Progress")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.bottom, 5)
+                }
                 List {
                     Button("Quiz Summary") {
                         //Check if user exists
@@ -509,13 +525,27 @@ struct Home: View {
 
 struct About: View {
     var body: some View {
-        Text("This is Quiz App which is an Application started by the ITS VIP in Fall 2022.")
-            .fontWeight(.bold)
-            .multilineTextAlignment(.leading)
-            .lineLimit(nil)
-            .bold()
-            .padding(.bottom, 600.0)
-            .frame(width:350)
+        ZStack {
+            Color(.orange).opacity(0.4).edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 10) {
+                Text("About Quiz App")
+                    .fontWeight(.light)
+                    .multilineTextAlignment(.center)
+                    .font(.title)
+                    .padding()
+                //Spacer()
+                Text("Quiz App is an application that started in 2022. It allows studenst to take quizzes on subjects they need help with. Students can also access flashcards to help them study.")
+                    .fontWeight(.light)
+                    .font(.body)
+                //Text("The app is currently on version 2")
+                    //.fontWeight(.light)
+                    //.font(.title)
+                Spacer()
+            }
+            .foregroundColor(Color.black.opacity(0.7))
+            .padding()
+        }
     }
 }
 
