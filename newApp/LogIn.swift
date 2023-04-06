@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import newApp
 
 let ques = DataLoader().userData
 
@@ -148,9 +150,9 @@ struct Register: View {
                         .cornerRadius(10)
                         .border(.red, width: CGFloat(invalidPassword2))
                     Button("Create Account") {
-                      
                         //Check if user exists
                         checkNewUser(username: username, password: password, reenteredPassword: reenteredPassword)
+                        save(username:username, password:password)
                     }
                     .alert("Passwords Don't Match", isPresented: $showAlert) {
                         Button("OK", role: .cancel) { }
@@ -161,7 +163,6 @@ struct Register: View {
                     .frame(width: 300, height: 50)
                     .background(Color.orange)
                     .cornerRadius(10)
-                    
                     NavigationLink(destination: Home(), isActive: $showingRegisterScreen) {
                         EmptyView()
                     }
@@ -170,6 +171,22 @@ struct Register: View {
             }
             .navigationBarHidden(true)
         }
+    }
+    
+    func save(username: String, password:String) {
+        print("Writing new accounts to firebase")
+        let db = Firestore.firestore()
+            let userData = ["username": username, "password": password]
+            
+        let docRef = db.collection("UserData").addDocument(data: userData) { error in
+                if let error = error {
+                    print("Error adding user data: \(error.localizedDescription)")
+                } else {
+                    print("User data added successfully")
+                }
+            }
+        myGlobalVariable = docRef.documentID
+        print(myGlobalVariable)
     }
     
     func checkNewUser(username: String, password: String,

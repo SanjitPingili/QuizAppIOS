@@ -7,8 +7,8 @@
 
 import SwiftUI
 import Firebase
-//import RealmSwift
-//let realmApp = RealmSwift.App(id: "application-0-usith")
+import newApp
+
 
 let data = DataLoader().userData
 let userD = DataLoader().userD
@@ -32,33 +32,14 @@ struct QuizView: View {
     
 
     var body: some View {
-        /*
-        let realm = try! Realm()
-        var token: NotificationToken?
-        // Read from realm
-        try! realm.write {
-            realm.write()
-        }
-
-        //  Set up the listener & observe object notifications.
-        token = realm.observe { change in
-            switch change {
-            case .change(let properties):
-                for property in properties {
-                    print("Property '(property.name)' changed to '(property.newValue!)'");
-                }
-            case .error(let error):
-                print("An error occurred: (error)")
-            case .deleted:
-                print("The object was deleted.")
-            }
-        }
-         */
             ZStack {
                 //var num = Int.random(in: 1..<5140)
-               
                 //seen.append(UserData(Question: data[num].Question, Answer: data[num].Answer, Chapter: ""))
                 Button("Next") {
+                    if(isFlipped == false) {
+                        flipCard()
+                        isFlipped.toggle()
+                    }
                     var num = Int.random(in: 1..<5140)
                     question = data[num].Question
                     answer = data[num].Answer
@@ -104,7 +85,7 @@ struct QuizView: View {
         let db = Firestore.firestore()
         //for item in seen {
             // Get the document reference for the current user
-            let userRef = db.collection("UserData").document("YDe6sFkZZC4BJVYoSXq6")
+            let userRef = db.collection("UserData").document(myGlobalVariable)
             
             // Create a new collection of questions and answers for this user
             let qaCollectionRef = userRef.collection("QuestionsAndAnswers")
