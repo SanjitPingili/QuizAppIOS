@@ -278,6 +278,7 @@ struct Home: View {
                     
                     Button("Quizzes") {
                         //Check if user exists
+                        fetchQuestion()
                         goQuizzes = true
                     }
                     .foregroundColor(.black)
@@ -285,7 +286,7 @@ struct Home: View {
                     .background(Color.orange)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Quizzes(), isActive: $goQuizzes) {
+                    NavigationLink(destination: QuizzesView(), isActive: $goQuizzes) {
                         EmptyView()
                     }
                     .padding(.vertical)
@@ -320,6 +321,27 @@ struct Home: View {
                 }
             }
         //}
+    }
+    
+    func fetchQuestion(){
+        let db = Firestore.firestore()
+        let userDataRef = db.collection("UserData").document(myGlobalVariable)
+        let questionsAndAnswersRef = userDataRef.collection("QuestionsAndAnswers")
+            
+        questionsAndAnswersRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error.localizedDescription)")
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let question = document.get("Question") as? String ?? ""
+                    let answer = document.get("Answer") as? String ?? ""
+                    let chapter = document.get("Chapter") as? String ?? ""
+                    let userData = UserData(Question: question, Answer: answer, Chapter: chapter)
+                    userDataArray.append(userData)
+                }
+            }
+         }
     }
 }
     

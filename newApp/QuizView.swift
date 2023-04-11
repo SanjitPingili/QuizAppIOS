@@ -23,12 +23,14 @@ struct QuizView: View {
     @State var question: String = data[Int.random(in: 1..<5140)].Question
     @State var answer: String = data[Int.random(in: 1..<5140)].Answer
 
-
+    init(){
+        seen.append(UserData(Question: question, Answer: answer, Chapter: ""))
+        write()
+    }
 
     let durationAndDelay: CGFloat = 0.2
     
     @State var questionNum = 0
-    
     
 
     var body: some View {

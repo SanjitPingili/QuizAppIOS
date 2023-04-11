@@ -8,3 +8,5 @@
 import Foundation
 
 public var myGlobalVariable = "YDe6sFkZZC4BJVYoSXq6"
+var userDataArray = [UserData]()
+
