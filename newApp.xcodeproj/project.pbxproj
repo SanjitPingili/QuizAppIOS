@@ -14,10 +14,10 @@
 		701E8EA72918964C00C7B744 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 701E8EA62918964C00C7B744 /* Data.json */; };
 		702479F629DF378700D08710 /* IdFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702479F529DF378700D08710 /* IdFile.swift */; };
 		7032E9DC29E5E36000441BB5 /* Quizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9DB29E5E36000441BB5 /* Quizzes.swift */; };
-		704A508329B05C8D000FE8B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704A508229B05C8D000FE8B7 /* GoogleService-Info.plist */; };
 		70CBEF4929DC8A96002A5CBC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CBEF4829DC8A96002A5CBC /* UserInfo.swift */; };
 		70E8675729B0452300E9401C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E8675629B0452300E9401C /* ViewModel.swift */; };
 		70E8675929B0456D00E9401C /* firebaseDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E8675829B0456D00E9401C /* firebaseDB.swift */; };
+		70FFE39F29E88F98000765F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70FFE39E29E88F98000765F8 /* GoogleService-Info.plist */; };
 		7B553483EF71036CB856F055 /* Pods_newAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E088DF7CF951FD6E8B7BEB8C /* Pods_newAppTests.framework */; };
 		8F2109FD35EE1D2103BFE8F7 /* Pods_newApp_newAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B863FB826F2758A4FD4D66E6 /* Pods_newApp_newAppUITests.framework */; };
 		E7FBFFBC7CABB1D5A6983D8C /* Pods_newApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8593D7774D590C9F541D8CA /* Pods_newApp.framework */; };
@@ -60,10 +60,10 @@
 		701E8EA62918964C00C7B744 /* Data.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = Data.json; sourceTree = "<group>"; };
 		702479F529DF378700D08710 /* IdFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdFile.swift; sourceTree = "<group>"; };
 		7032E9DB29E5E36000441BB5 /* Quizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes.swift; sourceTree = "<group>"; };
-		704A508229B05C8D000FE8B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70CBEF4829DC8A96002A5CBC /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		70E8675629B0452300E9401C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		70E8675829B0456D00E9401C /* firebaseDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebaseDB.swift; sourceTree = "<group>"; };
+		70FFE39E29E88F98000765F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5968DF75DE411676E1C8300 /* Pods-newAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newAppTests.debug.xcconfig"; path = "Target Support Files/Pods-newAppTests/Pods-newAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8593D7774D590C9F541D8CA /* Pods_newApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B863FB826F2758A4FD4D66E6 /* Pods_newApp_newAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newApp_newAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +165,7 @@
 		EF55FC7828E3891300AC9375 /* newApp */ = {
 			isa = PBXGroup;
 			children = (
-				704A508229B05C8D000FE8B7 /* GoogleService-Info.plist */,
+				70FFE39E29E88F98000765F8 /* GoogleService-Info.plist */,
 				701E8EA62918964C00C7B744 /* Data.json */,
 				EF55FC7928E3891300AC9375 /* newAppApp.swift */,
 				EF55FC7B28E3891300AC9375 /* LogIn.swift */,
@@ -330,7 +330,7 @@
 			files = (
 				EF55FC8228E3891500AC9375 /* Preview Assets.xcassets in Resources */,
 				EF55FC7E28E3891500AC9375 /* Assets.xcassets in Resources */,
-				704A508329B05C8D000FE8B7 /* GoogleService-Info.plist in Resources */,
+				70FFE39F29E88F98000765F8 /* GoogleService-Info.plist in Resources */,
 				EF55FCA728E60C8D00AC9375 /* Storyboard.storyboard in Resources */,
 				701E8EA72918964C00C7B744 /* Data.json in Resources */,
 			);

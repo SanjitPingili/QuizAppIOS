@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>181925529086-l04eoehjfaeb059ukos88pitil8hj1up.apps.googleusercontent.com</string>
+	<string>125444595873-92e2ivtgsbf7plp5cp3dhkbt79phpjqi.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.181925529086-l04eoehjfaeb059ukos88pitil8hj1up</string>
+	<string>com.googleusercontent.apps.125444595873-92e2ivtgsbf7plp5cp3dhkbt79phpjqi</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDliJ8UvtclGjM7LVI-see2Gy9xCXoKRP4</string>
+	<string>AIzaSyBXVkgolGSk8XkvCPoP3dny8qk7UIpDn-U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>181925529086</string>
+	<string>125444595873</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>vipitsfirebase</string>
 	<key>PROJECT_ID</key>
-	<string>vip-its-f3c1f</string>
+	<string>swift-backend-3623b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>vip-its-f3c1f.appspot.com</string>
+	<string>swift-backend-3623b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:181925529086:ios:9d229d713397e2c9746caf</string>
+	<string>1:125444595873:ios:dd3ca65bac0434867550e0</string>
 </dict>
 </plist>

@@ -95,8 +95,9 @@ struct QuizzesView: View{
                 self.arr.append(choice4)
                 self.arr.shuffle()
             } else {
-                Question = ques[num].Answer
-                choice1 = ques[num].Answer
+                var random = Int.random(in: 1..<5140)
+                Question = ques[random].Question
+                choice1 = ques[random].Answer
                 choice2 = ques[Int.random(in: 1..<5140)].Answer
                 choice3 = ques[Int.random(in: 1..<5140)].Answer
                 choice4 = ques[Int.random(in: 1..<5140)].Answer
