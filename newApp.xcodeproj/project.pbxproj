@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		680BA30529B1056900E4F2D9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BA30429B1056900E4F2D9 /* SplashScreenView.swift */; };
 		6881F67E29EF43B9004ADAD8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881F67D29EF43B9004ADAD8 /* Settings.swift */; };
+		68A5190329EF4A4600DA270B /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5190229EF4A4600DA270B /* Progress.swift */; };
 		701E8E9529187AE800C7B744 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 701E8E9429187AE800C7B744 /* Realm */; };
 		701E8E9729187AE800C7B744 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 701E8E9629187AE800C7B744 /* RealmSwift */; };
 		701E8EA129188D6800C7B744 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E8EA029188D6800C7B744 /* UserData.swift */; };
@@ -56,6 +57,7 @@
 		5C0B90FF7F138E0D548DD681 /* Pods-newApp-newAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newApp-newAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-newApp-newAppUITests/Pods-newApp-newAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		680BA30429B1056900E4F2D9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		6881F67D29EF43B9004ADAD8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		68A5190229EF4A4600DA270B /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		701E8EA029188D6800C7B744 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		701E8EA229188D9B00C7B744 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		701E8EA62918964C00C7B744 /* Data.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = Data.json; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				701E8EA229188D9B00C7B744 /* DataLoader.swift */,
 				70E8675629B0452300E9401C /* ViewModel.swift */,
 				70E8675829B0456D00E9401C /* firebaseDB.swift */,
+				68A5190229EF4A4600DA270B /* Progress.swift */,
 			);
 			path = newApp;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				EF55FC7A28E3891300AC9375 /* newAppApp.swift in Sources */,
 				EF10047F2913088400289C69 /* QuizView.swift in Sources */,
 				70E8675929B0456D00E9401C /* firebaseDB.swift in Sources */,
+				68A5190329EF4A4600DA270B /* Progress.swift in Sources */,
 				EF55FCA928E60EE600AC9375 /* ViewController.swift in Sources */,
 				70E8675729B0452300E9401C /* ViewModel.swift in Sources */,
 				EF55FCA528E600BE00AC9375 /* newPage1.swift in Sources */,
