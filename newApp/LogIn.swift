@@ -238,39 +238,46 @@ struct Home1: View {
     @State private var goSettings = false
     @State private var goSaved = false
     @State private var selectedTab = 0
+    @State private var showPersonalInfoSheet = false
     
     var body: some View {
             //NavigationView {
                 VStack{
                 
-                VStack {
-                    Color.orange.ignoresSafeArea()
-                    Circle()
-                        .scale(1.7)
-                        .foregroundColor(.white.opacity(0.4))
-                    Circle()
-                        .scale(1.35)
-                        .foregroundColor(.white.opacity(0.4))
-                    Circle()
-                        .scale(1)
-                        .foregroundColor(.white)
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.bottom, 60)
-                        .frame(width: 100, height: 100, alignment: .topTrailing)
-                            .offset(x: 100, y: 0)
-                        NavigationLink(destination: Settings(), isActive: $goSettings) {
-                            EmptyView()
+                    VStack {
+                        Color.orange.ignoresSafeArea()
+                        Circle()
+                            .scale(1.7)
+                            .foregroundColor(.white.opacity(0.4))
+                        Circle()
+                            .scale(1.35)
+                            .foregroundColor(.white.opacity(0.4))
+                        Circle()
+                            .scale(1)
+                            .foregroundColor(.white)
+                        Button("Info") {
+                            showPersonalInfoSheet = true
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.bottom, 60)
+                                .frame(width: 100, height: 100, alignment: .topTrailing)
+                                .offset(x: 100, y: 0)
                         }
-                    Text("Menu")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                        .bold()
-                        .padding(.bottom, 20.0)
-                }
+                        .offset(x: 100, y: 0)
+
+                        Text("Menu")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(nil)
+                            .bold()
+                            .padding(.bottom, 20.0)
+                    }
+                    .sheet(isPresented: $showPersonalInfoSheet) {
+                        Text("Personal Info")
+                    }
+
                     VStack() {
                         
                         VStack() {
