@@ -7,6 +7,7 @@
 
 import SwiftUI
 let ques = DataLoader().userData
+var numQuestionsAnswered = 0
 
 struct GlobalVariables {
     static var flagArr = [Int]()
@@ -424,183 +425,100 @@ struct Home: View {
 
 
     
-    struct Quizzes: View {
-        @State private var isTrue = false
-        /**
-                    First get a question and answer, then get another 3 random answers from the database. Store all answers in array and shuffle it to display to the screen.
-         */
-        var num = Int.random(in: 1..<5140)
-        var arr = [String]();
-        init() {
-            var choice1 = ques[num].Answer
-            var choice2 = ques[Int.random(in: 1..<5140)].Answer
-            var choice3 = ques[Int.random(in: 1..<5140)].Answer
-            var choice4 = ques[Int.random(in: 1..<5140)].Answer
-            arr.append(choice1)
-            arr.append(choice2)
-            arr.append(choice3)
-            arr.append(choice4)
-        }
-
-        var body: some View {
-            //NavigationView {
-                VStack{
-                
-                VStack {
-                    Text(ques[num].Question)
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                        .bold()
-                        .padding(.bottom, 50.0)
-                }
-                    VStack {
-                        
-                        Button(arr[0]) {
-                            //Check if user exists
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                        
-                        Button(arr[1]) {
-                            //Check if user exists
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                        
-                        
-                        Button(arr[2]) {
-                            //Check if user exists
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                        
-                        Button(arr[3]) {
-                            //Check if user exists
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                    }
-                    HStack {
-                        Button("Save") {
-                            //add to a list of saved questions that need to be reviewd
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 100, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                        Button("Next") {
-                            //goes to next question
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 100, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.vertical)
-                    }
-                }
-           // }
-        }
+struct Quizzes: View {
+    @State private var isTrue = false
+    /**
+        First get a question and answer, then get another 3 random answers from the database. Store all answers in array and shuffle it to display to the screen.
+     */
+    var num = Int.random(in: 1..<5140)
+    var arr = [String]();
+    init() {
+        var choice1 = ques[num].Answer
+        var choice2 = ques[Int.random(in: 1..<5140)].Answer
+        var choice3 = ques[Int.random(in: 1..<5140)].Answer
+        var choice4 = ques[Int.random(in: 1..<5140)].Answer
+        arr.append(choice1)
+        arr.append(choice2)
+        arr.append(choice3)
+        arr.append(choice4)
     }
 
-struct Settings: View {
-    @Environment(\.colorScheme) var colorScheme
-    @State private var goChangeUsername = false
-    @State private var goChangePassword = false
-    @State private var goAbout = false
-    @State private var goAppVersion = false
-    @State private var goPrivacy = false
-    
     var body: some View {
-        NavigationView {
+        VStack{
             VStack {
-                List {
-                    Button("Change Username") {
-                        //Check if user exists
-                        goChangeUsername = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    
-                    Button("Change Password") {
-                        //Check if user exists
-                        goChangePassword = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-
-                    Toggle(isOn: Binding<Bool>(
-                            get: { self.colorScheme == .dark },
-                            set: { _ in
-                                if colorScheme == .light {
-                                    UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
-                                } else {
-                                    UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
-                                }
-                            }
-                        )
-                    ) {
-                        Text("Dark Mode")
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-
-                    
-                    NavigationLink(destination: Text("Your data is private"), isActive: $goPrivacy) {
-                        Button("Privacy") {
-                            goPrivacy = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                    }
-                    
-                    NavigationLink(destination: Text("Version 1.0"), isActive: $goAppVersion) {
-                        Button("App Version") {
-                            goAppVersion = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                    }
-
-                    NavigationLink(destination: Text("This is QuizApp"), isActive: $goAbout) {
-                        Button("About") {
-                            goAbout = true
-                        }
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                    }
-                }
+                Text(ques[num].Question)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .bold()
+                    .padding(.bottom, 50.0)
             }
-            .navigationTitle("Settings")
+            VStack {
+                
+                Button(arr[0]) {
+                    //Check if user exists
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                .padding(.vertical)
+                
+                Button(arr[1]) {
+                    //Check if user exists
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                .padding(.vertical)
+                
+                
+                Button(arr[2]) {
+                    //Check if user exists
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                .padding(.vertical)
+                
+                Button(arr[3]) {
+                    //Check if user exists
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                .padding(.vertical)
+            }
+            HStack {
+                Button("Save") {
+                    //add to a list of saved questions that need to be reviewd
+                }
+                .foregroundColor(.black)
+                .frame(width: 100, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                .padding(.vertical)
+                
+                Button("Next") {
+                    //goes to next question
+                    numQuestionsAnswered += 1 // update number of questions answered
+                }
+                .foregroundColor(.black)
+                .frame(width: 100, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+                .padding(.vertical)
+            }
         }
     }
 }
+
+
+
 
 
 
@@ -635,27 +553,28 @@ struct Settings: View {
     }
 
 
-    struct Progress: View {
-        var body: some View {
-            VStack {
-                List {
-                    Button("Quiz Summary") {
-                        //Check if user exists
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                }
-            }
-        }
-    }
+
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             LogIn()
         }
     }
+struct Progress: View {
+    var body: some View {
+        VStack {
+            List {
+                Button("Quiz Summary (\(numQuestionsAnswered) answered)") {
+                    //Check if user exists
+                }
+                .foregroundColor(.black)
+                .frame(width: 300, height: 50)
+                .background(Color.orange)
+                .cornerRadius(10)
+            }
+        }
+    }
+}
 
 
 //new flash cards implementation
