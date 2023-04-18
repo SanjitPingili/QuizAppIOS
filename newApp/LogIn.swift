@@ -94,7 +94,18 @@ struct LogIn: View {
             } else {
                 wrongPassword = 2
             }
-        } else {
+        }
+        if username.lowercased() == "vip" {
+            wrongUsername = 0
+            if password.lowercased() == "sahana" {
+                wrongPassword = 0
+                showingLoginScreen = true
+            } else {
+                wrongPassword = 2
+            }
+        }
+        
+        else {
             wrongUsername = 2
         }
     }

@@ -19,23 +19,27 @@ struct Settings: View {
         NavigationView {
             VStack {
                 List {
-                    Button("Change Username") {
-                        //Check if user exists
-                        goChangeUsername = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    
-                    Button("Change Password") {
-                        //Check if user exists
-                        goChangePassword = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.orange)
-                    .cornerRadius(10)
+                    NavigationLink(destination: ChangeUsernameView(), isActive: $goChangeUsername) {
+                                Button("Change Username") {
+                                    //Check if user exists
+                                    goChangeUsername = true
+                                }
+                                .foregroundColor(.black)
+                                .frame(width: 300, height: 50)
+                                .background(Color.orange)
+                                .cornerRadius(10)
+                            }
+                            
+                            NavigationLink(destination: ChangePasswordView(), isActive: $goChangePassword) {
+                                Button("Change Password") {
+                                    //Check if user exists
+                                    goChangePassword = true
+                                }
+                                .foregroundColor(.black)
+                                .frame(width: 300, height: 50)
+                                .background(Color.orange)
+                                .cornerRadius(10)
+                            }
 
                     Toggle(isOn: Binding<Bool>(
                             get: { self.colorScheme == .dark },
@@ -89,5 +93,49 @@ struct Settings: View {
             }
             .navigationTitle("Settings")
         }
+    }
+}
+struct ChangeUsernameView: View {
+    @State private var newUsername = ""
+
+    var body: some View {
+        VStack {
+            TextField("New Username", text: $newUsername)
+                .padding()
+            
+            Button("Save") {
+                // Save the new username
+            }
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(10)
+        }
+        .padding()
+        .navigationBarTitle("Change Username")
+    }
+}
+
+struct ChangePasswordView: View {
+    @State private var currentPassword = ""
+    @State private var newPassword = ""
+
+    var body: some View {
+        VStack {
+            SecureField("Current Password", text: $currentPassword)
+                .padding()
+            SecureField("New Password", text: $newPassword)
+                .padding()
+            
+            Button("Save") {
+                // Save the new password
+            }
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(10)
+        }
+        .padding()
+        .navigationBarTitle("Change Password")
     }
 }
