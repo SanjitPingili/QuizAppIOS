@@ -12,7 +12,7 @@ import SwiftUI
 let data = DataLoader().userData
 var num = Int.random(in: 1..<5140)
 
-struct QuizView: View {
+/*struct QuizView: View {
     var body: some View {
         var num = Int.random(in: 1..<5140)
         var frontText = data[num].Question
@@ -23,85 +23,6 @@ struct QuizView: View {
             Text(backText)
         })
     }
-   /*
-   // typealias Body = <#type#>
-    @State var backDeg = 90.0
-    @State var frontDeg = 0.0
-    @State var isFlipped = false
-
-
-    let durationAndDelay: CGFloat = 0.2
-
-    @State var questionNum = 0
-
-    var body: some View {
-        /*
-        let realm = try! Realm()
-        var token: NotificationToken?
-        // Read from realm
-        try! realm.write {
-            realm.write()
-        }
-
-        //  Set up the listener & observe object notifications.
-        token = realm.observe { change in
-            switch change {
-            case .change(let properties):
-                for property in properties {
-                    print("Property '(property.name)' changed to '(property.newValue!)'");
-                }
-            case .error(let error):
-                print("An error occurred: (error)")
-            case .deleted:
-                print("The object was deleted.")
-            }
-        }
-         */
-            ZStack {
-                var num = Int.random(in: 1..<5140)
-                Button("Next") {
-                }.offset(x: 130, y:380)
-                //.onTapGesture(perform: <#T##() -> Void#>)
-                CardFront(degree: $frontDeg, textContext: data[num].Question)
-                CardBack(degree: $backDeg, textContext:  data[num].Answer)
-            }.onTapGesture {
-                flipCard()
-            }
-        
-
-    }
-    
-    func flipCard() {
-
-        isFlipped.toggle()
-
-        if isFlipped{
-            withAnimation(.linear(duration: durationAndDelay)) {
-                backDeg = 90
-
-            }
-            withAnimation(.linear(duration: durationAndDelay)) {
-                frontDeg = 0
-            }
-
-        } else {
-            withAnimation(.linear(duration: durationAndDelay)) {
-                frontDeg = -90
-
-            }
-            withAnimation(.linear(duration: durationAndDelay)) {
-                backDeg = 0
-            }
-
-        }
-
-
-    }
-
-
-
-
-*/
 
 }
 
@@ -177,3 +98,83 @@ struct QuizView_Previews: PreviewProvider {
         QuizView()
     }
 }
+*/
+
+struct QuizView: View {
+    //let data = DataLoader().userData
+    //@State var num = Int.random(in: 1..<5140)
+    @State var frontText = data[num].Question
+    @State var backText = data[num].Answer
+    @State var flipped = false
+    
+    var body: some View {
+        ZStack{
+            Color.orange
+                .ignoresSafeArea()
+            Circle()
+                .scale(1.7)
+                .foregroundColor(.white.opacity(0.4))
+            Circle()
+                .scale(1.35)
+                .foregroundColor(.white.opacity(0.4))
+            Circle()
+                .scale(1)
+                .foregroundColor(.white)
+            
+            VStack {
+                Text("Flashcards")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.bottom, 500)
+            }
+            
+            VStack {
+                if flipped {
+                    Text(backText)
+                } else {
+                    Text(frontText)
+                }
+            }
+            .rotation3DEffect(.degrees(flipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
+            .padding()
+            .frame(height: 200)
+            .frame(maxWidth: .infinity)
+            .background(Color.orange)
+            .overlay(
+                Rectangle()
+                    .stroke(Color.black, lineWidth: 4)
+            )
+            .padding()
+            .onTapGesture {
+                withAnimation {
+                    flipped.toggle()
+                }
+            }
+            
+            VStack {
+                Spacer()
+                Button(action: {
+                    num = Int.random(in: 1..<5140)
+                    frontText = data[num].Question
+                    backText = data[num].Answer
+                    flipped = false
+                }, label: {
+                    Text("Next")
+                        .bold()
+                        .foregroundColor(.black)
+                        .padding()
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                        .padding(.bottom, 150)
+                })
+            }
+        }
+    }
+}
+
+struct QuizView_Previews: PreviewProvider {
+    static var previews: some View {
+        QuizView()
+    }
+}
+
