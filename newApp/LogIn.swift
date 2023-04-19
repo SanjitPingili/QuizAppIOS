@@ -24,14 +24,14 @@ struct LogIn: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.orange
+                Color.blue
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
-                    .foregroundColor(.white.opacity(0.4))
+                    .foregroundColor(.white.opacity(0.2))
                 Circle()
                     .scale(1.35)
-                    .foregroundColor(.white.opacity(0.4))
+                    .foregroundColor(.white.opacity(0.6))
                 Circle()
                     .scale(1)
                     .foregroundColor(.white)
@@ -59,7 +59,7 @@ struct LogIn: View {
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.orange)
+                    .background(Color.gray)
                     .cornerRadius(10)
                     .padding(.bottom, 3.0)
                     
@@ -73,7 +73,7 @@ struct LogIn: View {
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.orange)
+                    .background(Color.gray)
                     .cornerRadius(10)
                     
                     NavigationLink(destination: Register(), isActive: $goRegister) {
@@ -130,7 +130,7 @@ struct Register: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.orange
+                Color.blue
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -194,7 +194,7 @@ struct Register: View {
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.orange)
+                    .background(Color.blue)
                     .cornerRadius(10)
                     
                     NavigationLink(destination: Home(), isActive: $showingRegisterScreen) {
@@ -256,7 +256,7 @@ struct Home1: View {
                 VStack{
                 
                     VStack {
-                        Color.orange.ignoresSafeArea()
+                        Color.blue.ignoresSafeArea()
                         Circle()
                             .scale(1.7)
                             .foregroundColor(.white.opacity(0.4))
@@ -271,7 +271,7 @@ struct Home1: View {
                             Image(systemName: "person.crop.circle")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.bottom, 60)
+                                .padding()
                                 .frame(width: 100, height: 100, alignment: .topTrailing)
                                 .offset(x: 100, y: 0)
                         }
@@ -283,7 +283,7 @@ struct Home1: View {
                             .multilineTextAlignment(.center)
                             .lineLimit(nil)
                             .bold()
-                            .padding(.bottom, 20.0)
+                            .padding()
                     }
                     .sheet(isPresented: $showPersonalInfoSheet) {
                         VStack() {
@@ -355,12 +355,11 @@ struct Home1: View {
                             .frame(width: 180, height: 80)
                             .background(Color.orange)
                             .cornerRadius(10)
-                            .padding(.trailing, 150)
+                            .padding()
                             
                             NavigationLink(destination: Settings(), isActive: $goSettings) {
                                 EmptyView()
                             }
-                            .padding(.vertical)
                         }
                         VStack(){
                             Button("Flashcards") {
@@ -371,12 +370,11 @@ struct Home1: View {
                             .frame(width: 180, height: 80)
                             .background(Color.blue)
                             .cornerRadius(10)
-                            .padding(.leading, 150)
+                            .padding()
                             
                             NavigationLink(destination: Home(), isActive: $goFlashcards) {
                                 EmptyView()
                             }
-                            .padding(.vertical)
                         }
                         VStack(){
                             Button("Quizzes") {
@@ -387,12 +385,11 @@ struct Home1: View {
                             .frame(width: 180, height: 80)
                             .background(Color.red)
                             .cornerRadius(10)
-                            .padding(.trailing, 150)
+                            .padding()
                             
                             NavigationLink(destination: Quizzes(), isActive: $goQuizzes) {
                                 EmptyView()
                             }
-                            .padding(.vertical)
                         }
                         VStack(){
                             Button("Saved Questions") {
@@ -403,12 +400,11 @@ struct Home1: View {
                             .frame(width: 180, height: 80)
                             .background(Color.yellow)
                             .cornerRadius(10)
-                            .padding(.leading, 150)
+                            .padding()
                             
                             NavigationLink(destination: SavedQuestions(), isActive: $goSaved) {
                                 EmptyView()
                             }
-                            .padding(.vertical)
                         }
                         VStack(){
                             Button("Progress") {
@@ -419,12 +415,11 @@ struct Home1: View {
                             .frame(width: 180, height: 80)
                             .background(Color.pink)
                             .cornerRadius(10)
-                            .padding(.trailing, 150)
+                            .padding()
                             
                             NavigationLink(destination: Progress(), isActive: $goProgress) {
                                 EmptyView()
                             }
-                            .padding(.vertical)
                         }
                     }
                 }

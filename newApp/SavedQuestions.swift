@@ -18,7 +18,7 @@ struct SavedQuestions: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 
 //                    NavigationLink(destination: SavedView(), isActive: $flag) {
@@ -29,10 +29,10 @@ struct SavedQuestions: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
             }
-        }
+        }.navigationTitle(Text("Saved Questions").font(.system(size: 56)))
         
     }
 }

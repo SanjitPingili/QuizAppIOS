@@ -11,7 +11,7 @@ struct SplashScreenView: View {
     @State private var isActive = false
     var body: some View {
         ZStack{
-            Color.orange
+            Color.blue
                 .ignoresSafeArea()
             Circle()
                 .scale(1.7)
