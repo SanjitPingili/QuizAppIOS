@@ -16,9 +16,9 @@ struct Progress: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
             }
-        }
+        }.navigationTitle(Text("Progress").font(.system(size: 56)))
     }
 }

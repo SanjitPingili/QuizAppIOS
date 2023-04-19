@@ -42,18 +42,11 @@ struct Flashcard<Front, Back>: View where Front: View, Back: View {
     
     var body: some View {
         ZStack{
-            Color.orange
+            Color.blue
                 .ignoresSafeArea()
             Circle()
-                .scale(1.7)
-                .foregroundColor(.white.opacity(0.4))
-            Circle()
-                .scale(1.35)
-                .foregroundColor(.white.opacity(0.4))
-            Circle()
-                .scale(1)
-                .foregroundColor(.white)
-            
+                .scale(2.5)
+                .foregroundColor(.white.opacity(0.7))
             VStack {
                 Text("Flashcards")
                     .font(.largeTitle)
@@ -73,7 +66,7 @@ struct Flashcard<Front, Back>: View where Front: View, Back: View {
             .padding()
             .frame(height: 200)
             .frame(maxWidth: .infinity)
-            .background(Color.orange)
+            .background(Color.white)
             .overlay(
                 Rectangle()
                     .stroke(Color.black, lineWidth: 4)

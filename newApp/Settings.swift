@@ -26,7 +26,7 @@ struct Settings: View {
                                 }
                                 .foregroundColor(.black)
                                 .frame(width: 300, height: 50)
-                                .background(Color.orange)
+                                .background(Color.blue)
                                 .cornerRadius(10)
                             }
                             
@@ -37,9 +37,10 @@ struct Settings: View {
                                 }
                                 .foregroundColor(.black)
                                 .frame(width: 300, height: 50)
-                                .background(Color.orange)
+                                .background(Color.blue)
                                 .cornerRadius(10)
                             }
+
 
                     Toggle(isOn: Binding<Bool>(
                             get: { self.colorScheme == .dark },
@@ -56,7 +57,7 @@ struct Settings: View {
                     }
                     .foregroundColor(.black)
                     .frame(width: 300, height: 50)
-                    .background(Color.orange)
+                    .background(Color.blue)
                     .cornerRadius(10)
 
                     
@@ -66,32 +67,31 @@ struct Settings: View {
                         }
                         .foregroundColor(.black)
                         .frame(width: 300, height: 50)
-                        .background(Color.orange)
+                        .background(Color.blue)
                         .cornerRadius(10)
                     }
                     
-                    NavigationLink(destination: Text("Version 1.0"), isActive: $goAppVersion) {
+                    NavigationLink(destination: Text("Version 1.0").background(Color.blue), isActive: $goAppVersion) {
                         Button("App Version") {
                             goAppVersion = true
                         }
                         .foregroundColor(.black)
                         .frame(width: 300, height: 50)
-                        .background(Color.orange)
+                        .background(Color.blue)
                         .cornerRadius(10)
                     }
 
-                    NavigationLink(destination: Text("This is QuizApp"), isActive: $goAbout) {
+                    NavigationLink(destination: Text("This is QuizApp, an application that was started in 2022. It allows students to take quizzes on subjects they need help with. Student can also access flashcards to help them study."), isActive: $goAbout) {
                         Button("About") {
                             goAbout = true
                         }
                         .foregroundColor(.black)
                         .frame(width: 300, height: 50)
-                        .background(Color.orange)
+                        .background(Color.blue)
                         .cornerRadius(10)
                     }
                 }
-            }
-            .navigationTitle("Settings")
+            }.navigationTitle(Text("Settings").font(.system(size: 56)))
         }
     }
 }

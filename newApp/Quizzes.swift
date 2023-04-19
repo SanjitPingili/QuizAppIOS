@@ -44,7 +44,7 @@ struct Quizzes: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .padding(.vertical)
                 
@@ -53,7 +53,7 @@ struct Quizzes: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .padding(.vertical)
                 
@@ -63,7 +63,7 @@ struct Quizzes: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .padding(.vertical)
                 
@@ -72,7 +72,7 @@ struct Quizzes: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 300, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .padding(.vertical)
             }
@@ -82,7 +82,7 @@ struct Quizzes: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 100, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .padding(.vertical)
                 
@@ -92,10 +92,10 @@ struct Quizzes: View {
                 }
                 .foregroundColor(.black)
                 .frame(width: 100, height: 50)
-                .background(Color.orange)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .padding(.vertical)
             }
-        }
+        }.navigationTitle(Text("Quizzes").font(.system(size: 56)))
     }
 }
