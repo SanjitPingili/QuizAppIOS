@@ -1,4 +1,3 @@
-//
 //  Quizzes.swift
 //  newApp
 //
@@ -10,10 +9,10 @@ import SwiftUI
 
 struct Quizzes: View {
     @State private var selectedAnswerIndex: Int?
-    var num = Int.random(in: 1..<5140)
-    var arr = [String]()
+    @State private var num = Int.random(in: 1..<5140)
+    @State private var arr = [String]()
 
-    init() {
+    func generateNewQuestion() {
         let correctAnswer = ques[num].Answer
         var choices = [correctAnswer]
         while choices.count < 4 {
@@ -24,6 +23,7 @@ struct Quizzes: View {
             }
         }
         arr = choices.shuffled()
+        selectedAnswerIndex = nil // reset the selected answer
     }
 
     func getButtonBackground(for index: Int) -> Color {
@@ -77,6 +77,8 @@ struct Quizzes: View {
                 Button("Next") {
                     //goes to next question
                     numQuestionsAnswered += 1 // update number of questions answered
+                    num = Int.random(in: 1..<5140) // generate new question
+                    generateNewQuestion() // generate new set of options
                 }
                 .foregroundColor(.black)
                 .frame(width: 100, height: 50)
@@ -85,5 +87,8 @@ struct Quizzes: View {
                 .padding(.vertical)
             }
         }.navigationTitle(Text("Quizzes").font(.system(size: 56)))
+        .onAppear {
+            generateNewQuestion() // generate a new question when the view appears
+        }
     }
 }
