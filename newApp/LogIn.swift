@@ -286,7 +286,62 @@ struct Home1: View {
                             .padding(.bottom, 20.0)
                     }
                     .sheet(isPresented: $showPersonalInfoSheet) {
-                        Text("Personal Info")
+                        VStack() {
+                            HStack() {
+                                Spacer()
+                                VStack() {
+                                    Image(systemName: "person.circle.fill")
+                                        .resizable()
+                                        .frame(width:150, height:150)
+                                        .clipShape(Circle())
+                                        .padding(.top, 44)
+                                    
+                                    Text("John Smith").font(.system(size: 40).bold())
+                                        .padding(.top, 12)
+                                    Text("@jsmith80").font(.system(size: 20).bold())
+                                        .foregroundColor(.gray)
+                                        .padding(.top, 12)
+                                    
+                                }
+                               
+                                Spacer()
+                                
+                            }
+                            VStack() {
+//                                Image(systemName: "phone.fill")
+//                                    .foregroundColor(.gray)
+//                                    .frame(width:50, height:50)
+//
+                                Text("--------------------------------").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                Text("").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                Text("").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                
+                                Label("                 123-456-7890", systemImage: "phone.fill")
+                                    .foregroundColor(.gray)
+                                Text("").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                Text("").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                Label("   jsmith80@gatech.edu", systemImage: "envelope").foregroundColor(.gray)
+                                Text("").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                Text("").font(.system(size: 20).bold())
+                                    .foregroundColor(.gray)
+                                    .padding(.top, 12)
+                                Label("   Password", systemImage: "eye.fill").foregroundColor(.gray)
+                                
+                            }
+                            Spacer()
+                        }
                     }
 
                     VStack() {
