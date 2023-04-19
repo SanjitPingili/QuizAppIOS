@@ -19,7 +19,6 @@ struct Settings: View {
         NavigationView {
             VStack {
                 List {
-<<<<<<< Updated upstream
                     NavigationLink(destination: ChangeUsernameView(), isActive: $goChangeUsername) {
                                 Button("Change Username") {
                                     //Check if user exists
@@ -27,7 +26,7 @@ struct Settings: View {
                                 }
                                 .foregroundColor(.black)
                                 .frame(width: 300, height: 50)
-                                .background(Color.orange)
+                                .background(Color.blue)
                                 .cornerRadius(10)
                             }
                             
@@ -38,28 +37,10 @@ struct Settings: View {
                                 }
                                 .foregroundColor(.black)
                                 .frame(width: 300, height: 50)
-                                .background(Color.orange)
+                                .background(Color.blue)
                                 .cornerRadius(10)
                             }
-=======
-                    Button("Change Username") {
-                        //Check if user exists
-                        goChangeUsername = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    
-                    Button("Change Password") {
-                        //Check if user exists
-                        goChangePassword = true
-                    }
-                    .foregroundColor(.black)
-                    .frame(width: 300, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(10)
->>>>>>> Stashed changes
+
 
                     Toggle(isOn: Binding<Bool>(
                             get: { self.colorScheme == .dark },
