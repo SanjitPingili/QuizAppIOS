@@ -139,22 +139,58 @@ struct SavedView1: View {
         VStack {
             Text("Your Study Mode Saved questions")
                 .font(.headline)
+                .foregroundColor(.blue)
                 .padding(.top, 20)
-            // add your saved questions list here
+            
+            Spacer()
+            
+            let data = DataLoader().userData
+            var num = Int.random(in: 1..<5140)
+            @State var frontText = data[num].Question
+            
+            Text(frontText)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.blue, lineWidth: 2)
+                )
+                .foregroundColor(.blue)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .multilineTextAlignment(.center)
         }
         .navigationBarTitle("Saved", displayMode: .inline)
+        .background(Color.white)
     }
 }
 
+
+
 struct SavedView2: View {
     var body: some View {
-        VStack {
-            Text("Your Quiz Mode Saved questions")
-                .font(.headline)
-                .padding(.top, 20)
-            // add your saved questions list here
-        }
-        .navigationBarTitle("Saved", displayMode: .inline)
+            VStack {
+                Text("Your Quiz Mode Saved questions")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding(.top, 20)
+                
+                Spacer()
+                
+                let data = DataLoader().userData
+                var num = Int.random(in: 1..<5140)
+                @State var frontText = data[num].Question
+                
+                Text(frontText)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.blue, lineWidth: 2)
+                    )
+                    .foregroundColor(.blue)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .multilineTextAlignment(.center)
+            }
+            .navigationBarTitle("Saved", displayMode: .inline)
+            .background(Color.white)
     }
 }
 
