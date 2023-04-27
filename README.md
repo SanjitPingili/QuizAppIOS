@@ -15,6 +15,7 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 We used GCP Firebase as the main database for storing user profile data. Login to [here](https://firebase.google.com/) and login with the details below. Then go to swift-backend(swift-backend-3623b) -> Firestore Database.
 
 Gmail: vipitsgpt@gmail.com
+
 Password: @abc1234
 
 ## Spring 2023 Team Memebrs
