@@ -145,38 +145,8 @@ struct SavedView1: View {
             Spacer()
             
             let data = DataLoader().userData
-            var num = Int.random(in: 1..<5140)
-            @State var frontText = data[num].Question
-            
-            Text(frontText)
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.blue, lineWidth: 2)
-                )
-                .foregroundColor(.blue)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .multilineTextAlignment(.center)
-        }
-        .navigationBarTitle("Saved", displayMode: .inline)
-        .background(Color.white)
-    }
-}
-
-
-
-struct SavedView2: View {
-    var body: some View {
-            VStack {
-                Text("Your Quiz Mode Saved questions")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                    .padding(.top, 20)
-                
-                Spacer()
-                
-                let data = DataLoader().userData
-                var num = Int.random(in: 1..<5140)
+            //var num = Int.random(in: 1..<5140)
+            if (flag) {
                 @State var frontText = data[num].Question
                 
                 Text(frontText)
@@ -189,6 +159,39 @@ struct SavedView2: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .multilineTextAlignment(.center)
             }
+        }
+        .navigationBarTitle("Saved", displayMode: .inline)
+        .background(Color.white)
+    }
+}
+
+
+
+struct SavedView2: View {
+    var body: some View {
+        VStack {
+            Text("Your Quiz Mode Saved questions")
+                .font(.headline)
+                .foregroundColor(.blue)
+                .padding(.top, 20)
+            
+            Spacer()
+            if (flag1) {
+                let data = DataLoader().userData
+                //var num1 = Int.random(in: 1..<5140)
+                @State var frontText = data[num1].Question
+                
+                Text(frontText)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.blue, lineWidth: 2)
+                    )
+                    .foregroundColor(.blue)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .multilineTextAlignment(.center)
+            }
+        }
             .navigationBarTitle("Saved", displayMode: .inline)
             .background(Color.white)
     }
