@@ -9,13 +9,12 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 
 - `mongodb+srv://quizAppMobileUser:xkLaBBaa1dTsZuX8@quizappdb.7ltdg.mongodb.net/test`
 
-## Fall 2022 Team Memebrs
-- Neha Lalani - Frontend Team
-- Aahan Kerawala - Frontend Team
-- Sakshi Deshpande - Frontend Team
+## Fall 2022 Team Members
 - Zhen Hong Tan - Backend Team
-- Sabina Ajjan - Backend Team
+- Avyesh Kapadia - Backend Team
 - Devang Ajmera - Backend Team
+- Sabina Ajjan - Algorithms Team
+- Rishi Nopany - Algorithms Team
 
 ## [Figma Link to Wireframing](https://www.figma.com/file/QxqNtFrd8C7XOSHJsooLfQ/SWIFT-App-Protype?node-id=0%3A1&t=qOEb56QCIo9ARpFr-0)
 
@@ -32,6 +31,10 @@ So far we've been using the latest version of Swift (5.7), Xcode version 14.0.1 
 ## Branch Organization
 - The new main branch sould contain the most recent running code
 
+## Algorithms
 
+### KeyBERT
+- KeyBERT is a keyword extraction tool that is implemented to make searching for questions easier and it utilizes BERT, a powerful bi-directional transformer model developed by Google used heavily in the fields of natural language processing (NLP).
+- In order to run the files, a virtual environment needs to be initialized followed by the installation of the pip package keyBERT.
 
 
