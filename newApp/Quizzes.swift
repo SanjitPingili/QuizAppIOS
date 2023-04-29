@@ -7,13 +7,15 @@
 import Foundation
 import SwiftUI
 
+public var num1 = Int.random(in: 1..<5140)
+public var flag1 = false
 struct Quizzes: View {
     @State private var selectedAnswerIndex: Int?
-    @State private var num = Int.random(in: 1..<5140)
+    //@State private var num = Int.random(in: 1..<5140)
     @State private var arr = [String]()
 
     func generateNewQuestion() {
-        let correctAnswer = ques[num].Answer
+        let correctAnswer = ques[num1].Answer
         var choices = [correctAnswer]
         while choices.count < 4 {
             let randomIndex = Int.random(in: 1..<5140)
@@ -29,7 +31,7 @@ struct Quizzes: View {
     func getButtonBackground(for index: Int) -> Color {
         if let selected = selectedAnswerIndex {
             if index == selected {
-                if arr[selected] == ques[num].Answer {
+                if arr[selected] == ques[num1].Answer {
                     return Color.green
                 } else {
                     return Color.red
@@ -42,7 +44,7 @@ struct Quizzes: View {
     var body: some View {
         VStack{
             VStack {
-                Text(ques[num].Question)
+                Text(ques[num1].Question)
                     .font(.headline)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -66,7 +68,7 @@ struct Quizzes: View {
             }
             HStack {
                 Button("Save") {
-                    //add to a list of saved questions that need to be reviewed
+                    flag1 = true;
                 }
                 .foregroundColor(.black)
                 .frame(width: 100, height: 50)
@@ -77,7 +79,7 @@ struct Quizzes: View {
                 Button("Next") {
                     //goes to next question
                     numQuestionsAnswered += 1 // update number of questions answered
-                    num = Int.random(in: 1..<5140) // generate new question
+                    num1 = Int.random(in: 1..<5140) // generate new question
                     generateNewQuestion() // generate new set of options
                 }
                 .foregroundColor(.black)

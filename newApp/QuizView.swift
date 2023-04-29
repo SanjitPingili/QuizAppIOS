@@ -6,7 +6,8 @@
 import SwiftUI
 
 let data = DataLoader().userData
-var num = Int.random(in: 1..<5140)
+public var num = Int.random(in: 1..<5140)
+public var flag = false
 
 struct QuizView: View {
     @State var frontText = data[num].Question
@@ -68,10 +69,15 @@ struct QuizView: View {
                             .background(Color.white)
                             .cornerRadius(10)
                     })
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                        .font(.system(size: 30))
-                        .padding(50)
+                    Button(action: {
+                               flag = true
+                           }) {
+                               Image(systemName: "star.fill")
+                                   .foregroundColor(.yellow)
+                                   .font(.system(size: 30))
+                                   .padding(50)
+                           }
+                    
                 }
                 .padding(.bottom, 50)
             }
