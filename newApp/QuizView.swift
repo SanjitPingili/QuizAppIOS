@@ -12,28 +12,22 @@ struct QuizView: View {
     @State var frontText = data[num].Question
     @State var backText = data[num].Answer
     @State var flipped = false
-    
+
     var body: some View {
         ZStack{
-            Color.orange
-                .ignoresSafeArea()
+            Color.blue
             Circle()
                 .scale(1.7)
-                .foregroundColor(.white.opacity(0.4))
-            Circle()
-                .scale(1.35)
-                .foregroundColor(.white.opacity(0.4))
-            Circle()
-                .scale(1)
-                .foregroundColor(.white)
+                .foregroundColor(.white.opacity(0.2))
             
+
             VStack {
                 Text("Flashcards")
                     .font(.largeTitle)
                     .bold()
                     .padding(.bottom, 500)
             }
-            
+
             VStack {
                 ZStack {
                     Text(frontText)
@@ -45,7 +39,7 @@ struct QuizView: View {
                 }
                 .frame(height: 200)
                 .frame(maxWidth: .infinity)
-                .background(Color.orange)
+                .background(Color.white)
                 .overlay(
                     Rectangle()
                         .stroke(Color.black, lineWidth: 4)
@@ -57,28 +51,33 @@ struct QuizView: View {
                     }
                 }
             }
-            
+
             VStack {
                 Spacer()
-                Button(action: {
-                    num = Int.random(in: 1..<5140)
-                    frontText = data[num].Question
-                    backText = data[num].Answer
-                    flipped = false
-                }, label: {
-                    Text("Next")
-                        .bold()
-                        .foregroundColor(.black)
-                        .padding()
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .padding(.bottom, 150)
-                })
+                HStack {
+                    Button(action: {
+                        num = Int.random(in: 1..<5140)
+                        frontText = data[num].Question
+                        backText = data[num].Answer
+                        flipped = false
+                    }, label: {
+                        Text("Next")
+                            .bold()
+                            .foregroundColor(.black)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                    })
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                        .font(.system(size: 30))
+                        .padding(50)
+                }
+                .padding(.bottom, 50)
             }
         }
     }
 }
-
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
