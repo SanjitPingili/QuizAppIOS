@@ -31,6 +31,8 @@ Password: @abc1234
 
 ## [Figma Link to Wireframing](https://www.figma.com/file/QxqNtFrd8C7XOSHJsooLfQ/SWIFT-App-Protype?node-id=0%3A1&t=qOEb56QCIo9ARpFr-0)
 
+## [Research Doc Link](https://docs.google.com/document/d/15algXJnZo9IXTvhdOfe71PjFgjcvsyvNWr_wMwEMzCs/edit)
+
 ## NewAppApp.swift
 - Loads the Log In page
 
