@@ -52,14 +52,16 @@ struct QuizView: View {
             ZStack {
                 
                 Button("Next") {
+                    //assigns new num => new index in data array
                     num = Int.random(in: 1..<5140)
+                    //if on definition side, switch to term side
                     if (isFlipped == false) {
                         flipCard()
                         isFlipped.toggle()
                     }
                 }.offset(x: 130, y:380)
-                //.onTapGesture(perform: <#T##() -> Void#>)
                 
+                //shows the card
                 CardFront(degree: $frontDeg, textContext: data[num].Question)
                 CardBack(degree: $backDeg, textContext:  data[num].Answer)
             }.onTapGesture {
